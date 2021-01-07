@@ -1,0 +1,37 @@
+export class PaymentModel {
+    entryDate: Date;
+    vendorId: number;
+    package: number;
+    packageType: number;
+    paymentType: number;
+    paymentAmount: number;
+    receivedAmount: number;
+    paymentStatus: number;
+    gst: number;
+    kfc: number;
+    tds: number;
+    walletBalance: number;
+    vendorStatus: number;
+    paymentDate: Date;
+    paymentMode: number;
+    paymentRefNumber: number;
+    payeeName: string;
+    paymentDocs: string;
+    bankName: string;
+    bankState: string;
+    bankCity: string;
+    branch: string;
+    bankAccountNumber: string;
+    ifsc: string;
+    bankCreditedDate: Date;
+    financeApprovalStatus: number;
+    financeApprovalStatusDate: Date;
+    financeComment: string;
+    tidNumber: string;
+    chequeDate: Date;
+    bhstatus: number;
+    bhstatusReason: string;
+    bhstatusDate: Date;
+    bhcomments: string;
+    createdBy:  string;
+}

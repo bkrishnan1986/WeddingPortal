@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Happy.Weddings.LeadManagement.API</name>
+    </assembly>
+    <members>
+        <member name="T:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController">
+            <summary>
+            LeadsController
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeads(Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadParameters)">
+            <summary>
+            Gets the leads.
+            </summary>
+            <param name="leadParameters">The lead parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLead(System.String)">
+            <summary>
+            Gets the lead.
+            </summary>
+            <param name="leadId">The lead identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadsByVendor(Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadsByVendorParameters)">
+            <summary>
+            Gets the leads by Vendor.
+            </summary>
+            <param name="leadsByVendorParameters">The lead By Vendor parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.CreateLead(Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.CreateLeadCollectionRequest)">
+            <summary>
+            Creates the lead.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.UpdateLead(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.UpdateLeadRequest)">
+            <summary>
+            Update the lead.
+            </summary>
+            <param name="leadId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.UpdateLeadPortion(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.UpdateLeadPortionRequest)">
+            <summary>
+            Updates the lead portion.
+            </summary>
+            <param name="leadId">The lead identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.DeleteLead(System.Int32)">
+            <summary>
+            Deletes the lead.
+            </summary>
+            <param name="leadId">The lead identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.CreateFollowLead(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.CreateLeadValidationRequest)">
+            <summary>
+            Creates the follow lead.
+            </summary>
+            <param name="leadId">The lead identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.UpdateFollowLead(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.UpdateLeadValidationRequest)">
+            <summary>
+            Updates the follow lead.
+            </summary>
+            <param name="leadValidationId">The lead validation identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.CreateAssignLead(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.CreateLeadAssignRequest)">
+            <summary>
+            Creates the assign lead.
+            </summary>
+            <param name="leadId">The lead identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadQuotes(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadQuoteParameters)">
+            <summary>
+            Get lead quotes.
+            </summary>
+            <param name="leadId"></param>
+            <param name="quoteParameters">The Lead Quote Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.CreateLeadQuote(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.CreateLeadQuoteRequest)">
+            <summary>
+            creates lead quote against each vendor
+            </summary>
+            <param name="leadId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.UpdateLeadQuote(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.UpdateLeadQuoteRequest)">
+            <summary>
+            updates lead quote.
+            </summary>
+            <param name="quoteId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.DeleteLeadQuote(System.Int32)">
+            <summary>
+            Delete lead quote.
+            </summary>
+            <param name="quoteId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadStatus(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadStatusParameter)">
+            <summary>
+            GetLeadStatus
+            </summary>
+            <param name="leadId"></param>
+            <param name="leadStatusParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadCount(System.String,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadCountTotAmtParameter)">
+            <summary>
+            Gets the lead count.
+            </summary>
+            <param name="vendorId">The lead identifier.</param>
+            <param name="leadCountParameter">The lead count parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadTotalAmount(System.String,Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadCountTotAmtParameter)">
+            <summary>
+            Gets the lead count.
+            </summary>
+            <param name="vendorId">The lead identifier.</param>
+            <param name="leadCountParameter">The lead count parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.LeadsController.GetLeadId(Happy.Weddings.LeadManagement.Core.DTO.Requests.Lead.LeadIdParameters)">
+            <summary>
+            Gets the lead identifier.
+            </summary>
+            <param name="idParameters">The identifier parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController">
+            <summary>
+            Wallets multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.GetAllMultiCodes">
+            <summary>
+            Gets All the MultiCodes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.GetMultiCode(System.String)">
+            <summary>
+            Gets the multicode.
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.CreateMultiCode(Happy.Weddings.LeadManagement.Core.DTO.Requests.MultiCode.CreateMultiCodeRequest)">
+            <summary>
+            Creates the Multicode.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.UpdateMultiCode(System.String,Happy.Weddings.LeadManagement.Core.DTO.Requests.MultiCode.UpdateMultiCodeRequest)">
+            <summary>
+            Updates MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiCodesController.DeleteMultiCode(System.String)">
+            <summary>
+            Deletes the MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController">
+            <summary>
+            Lead management multidetail operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.GetAllMultiDetails(Happy.Weddings.LeadManagement.Core.DTO.Requests.MultiDetail.MultiDetailParameters)">
+            <summary>
+            Gets All the multidetails.
+            </summary>
+            <param name="multiDetailParameters">The multidetail parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.GetMultiDetailsByCode(System.String)">
+            <summary>
+            Gets the multidetails
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.CreateMultiDetails(Happy.Weddings.LeadManagement.Core.DTO.Requests.MultiDetail.CreateMultiDetailsRequest)">
+            <summary>
+            Creates the multidetail.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.UpdateMultiDetails(System.Int32,Happy.Weddings.LeadManagement.Core.DTO.Requests.MultiDetail.UpdateMultiDetailsRequest)">
+            <summary>
+            Updates MultiDetail.
+            </summary>
+            <param name="multidetailId">The multidetail identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Controllers.v1.MultiDetailsController.DeleteMultiDetails(System.Int32)">
+            <summary>
+            Deletes the MultiDetail.
+            </summary>
+            <param name="multidetailId">The Multidetail identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.HealthCheck">
+            <summary>
+            Extension for adding health checks
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.HealthCheck.AddHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the health checks.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.MVCConfiguration">
+            <summary>
+            Extension for adding MVC related operations
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.MVCConfiguration.AddMVCConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the MVC confihuration.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.ResponseCompression">
+            <summary>
+            Extension for adding response compression
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.ResponseCompression.CreateResponseCompression(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.ResponseCompression.GetMimeTypesForCompression">
+            <summary>
+            Gets the MIME types for compression.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.RouteExtensions">
+            <summary>
+            Adds the route url prefixes
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="routeAttribute">The route attribute.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,System.String)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="prefix">The prefix.</param>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.RoutePrefixConvention">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.IApplicationModelConvention" />
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.RoutePrefixConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.LeadManagement.API.Extensions.RoutePrefixConvention"/> class.
+            </summary>
+            <param name="route">The route.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.RoutePrefixConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            Called to apply the convention to the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.
+            </summary>
+            <param name="application">The <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.</param>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.ServicesInjection">
+            <summary>
+            Extension for adding object injection lifetime
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.ServicesInjection.AddServicesInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the services injection.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="HostingEnvironment">The hosting environment.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Extensions.SwaggerConfiguration">
+            <summary>
+            Extension for adding swagger documentation
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Extensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Filters.SerilogPropertyFilter">
+            <summary>
+            Serilog filter for adding dynamic properties
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.LeadManagement.API.Filters.SerilogPropertyFilter._next">
+            <summary>
+            The next
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Filters.SerilogPropertyFilter.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.LeadManagement.API.Filters.SerilogPropertyFilter" /> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Filters.SerilogPropertyFilter.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Program">
+            <summary>
+            Program starts here
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.LeadManagement.API.Startup">
+            <summary>
+            Base method for intilaizing the services
+            </summary>
+        </member>
+        <member name="P:Happy.Weddings.LeadManagement.API.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:Happy.Weddings.LeadManagement.API.Startup.HostingEnvironment">
+            <summary>
+            Gets the hosting environment.
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.LeadManagement.API.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Happy.Weddings.LeadManagement.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

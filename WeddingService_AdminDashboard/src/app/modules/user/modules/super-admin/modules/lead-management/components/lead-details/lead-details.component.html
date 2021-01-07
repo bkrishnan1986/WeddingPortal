@@ -1,0 +1,334 @@
+<div class="col-md-12 cntin2">
+
+    <div class="row p-l-20">
+        <div *ngIf="!isEdit" class="col-md-8">
+            <h4>View Lead Details</h4>
+        </div>
+        <div *ngIf="isEdit" class="col-md-8">
+            <h4>Edit Lead Details</h4>
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="btn1bg6" class="btn btn-light" (click)="navigateToViewLeads()">BACK</button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" id="btn1bg6" class="btn btn-warning btn-lg" (click)="editLead()">EDIT</button>
+        </div>
+    </div>
+
+    <div class="row padding-20">
+        <div class="col-md-12">
+            <form [formGroup]="leadForm">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Lead ID</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="leadId" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Created Date</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="createdDate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Lead Owner</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="leadOwner" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Lead Owner Mobile Number</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="leadOwnerMobile" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container pt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Lead Type</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="leadType">
+                                        <option value="">Select Lead Type</option>
+                                        <option *ngFor="let item of leadTypeList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Event type</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="eventType">
+                                        <option value="">Select Event type</option>
+                                        <option *ngFor="let item of eventTypeList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Category</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="category">
+                                        <option value="">Select Category</option>
+                                        <option *ngFor="let item of categoryList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Event Date</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inpt2" type="text" formControlName="eventDate"
+                                        placeholder=""
+                                        [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY',adaptivePosition: true }"
+                                        bsDatepicker />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Event Location</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="location">
+                                        <option value="">Select Location</option>
+                                        <option *ngFor="let item of leadLocationList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Lead Mode</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="leadMode"
+                                        (change)="onLeadModeChange()">
+                                        <option value="">Select Lead Mode</option>
+                                        <option *ngFor="let item of leadModeList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Budget</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="budget" (keyup)="budgetChange($event.target.value)" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">{{valueTitle}}</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        #cplcommissionValue (keyup)="cplcommissionChange($event.target.value)"
+                                        formControlName="cplcommissionValue" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Revenue</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="expRevenue" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Customer Name</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="customerName" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Customer Email</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="customerEmail" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Customer Mobile No 1</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="customerMobileNum1" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Customer Mobile No 2</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <input class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                        formControlName="customerMobileNum2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-3 col-4 mt-15">
+                                    <span class="mt-2 respfnt1">Customer Location</span>
+                                </div>
+                                <div class="col-lg-9 col-8">
+                                    <select class="mt-2 form-control" id="inpt2" formControlName="location">
+                                        <option value="">Select Customer Location</option>
+                                        <option *ngFor="let item of leadLocationList" [value]="item.id">{{item.value}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-lg-3 col-4 mt-15">
+                            <span class="mt-2 respfnt1">Description/Remarks</span>
+                        </div><br>
+                        <div class="col-lg-12">
+                            <textarea class="mt-2" id="inp" id="inpt2" type="text" placeholder=""
+                                formControlName="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row padding-20">
+        <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="leadForm.controls.category.value !== ''" class="tab-pane"
+            id="tab-questionare">
+
+            <div class="container">
+                <h5>Questionaire</h5>
+            </div>
+
+            <div class="container mt-3" *ngFor="let x of questionAnswers;let j=index">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>{{j+1}}.{{x.question}} </p>
+                    </div>
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType===31" class="col-md-6">
+                        <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="x.serviceAnswer"
+                            [(ngModel)]="x.result" (onSelect)="onItemSelect($event,x.result)"
+                            (onDeSelect)="onItemSelect($event,x.result)">
+                        </ng-multiselect-dropdown>
+                    </div>
+
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==29" class="col-md-6">
+                        <label class="font-size ml-2" *ngFor="let l of x.serviceAnswer;let o=index"
+                            for="{{l.id}}_answer">
+                            <input type="radio" id="{{l.id}}_answer" name="{{l.id}}_answer" (click)="detectRadio(j,o)"
+                                [(ngModel)]="x.result" value="{{l.id}}_answer"> <span class="ml-2">{{l.answer}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==30" class="col-md-6">
+                        <label class="font-size ml-2" *ngFor="let l of x.serviceAnswer;let o=index">
+                            <input type="checkbox" name="check{{j}}" (click)="detectCheckBox(j,o)" [value]="l.value">
+                            <span class="ml-2">{{l.answer}}</span>
+                        </label>
+                    </div>
+
+
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==28" class="col-md-6">
+                        <input class="mt-2 form-control" [(ngModel)]="x.result" type="text"
+                            [ngModel]="x.serviceAnswer[0].answer">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button *ngIf="isEdit" type="button" id="btn1bg6" (click)="updateLead()"
+        class="btn btn-warning btn-lg mx-auto d-block mt-3">Update</button>
+</div>

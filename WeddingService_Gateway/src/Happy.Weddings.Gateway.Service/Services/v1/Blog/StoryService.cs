@@ -1,0 +1,318 @@
+﻿using Happy.Weddings.Gateway.Core.Config.Blog;
+using Happy.Weddings.Gateway.Core.DTO;
+using Happy.Weddings.Gateway.Core.DTO.Blog.Story;
+using Happy.Weddings.Gateway.Core.Infrastructure;
+using Happy.Weddings.Gateway.Core.Services.v1.Blog;
+using Happy.Weddings.Gateway.Service.Helpers;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
+using Serilog;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Happy.Weddings.Gateway.Service.Services.v1.Blog
+{
+    /// <summary>
+    /// Service implementation for post related operations
+    /// </summary>
+    public class StoryService : IStoryService
+    {
+        /// <summary>
+        /// The HTTP client factory
+        /// </summary>
+        private readonly IHttpClientFactory httpClientFactory;
+
+        /// <summary>
+        /// The distributed cache
+        /// </summary>
+        private readonly IDistributedCache distributedCache;
+
+        /// <summary>
+        /// The services configuration
+        /// </summary>
+        private readonly ServicesConfig servicesConfig;
+
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private readonly ILogger logger;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoryService" /> class.
+        /// </summary>
+        /// <param name="httpClientFactory">The HTTP client factory.</param>
+        /// <param name="distributedCache">The distributed cache.</param>
+        /// <param name="servicesConfig">The services configuration.</param>
+        /// <param name="logger">The logger.</param>
+        public StoryService(
+            IHttpClientFactory httpClientFactory,
+            IDistributedCache distributedCache,
+            ServicesConfig servicesConfig,
+            ILogger logger)
+        {
+            this.httpClientFactory = httpClientFactory;
+            this.distributedCache = distributedCache;
+            this.servicesConfig = servicesConfig;
+            this.logger = logger;
+        }
+
+        /// <summary>
+        /// Gets the stories.
+        /// </summary>
+        /// <param name="storyParametersRequest">The story parameters request.</param>
+        /// <returns></returns>
+        //public async Task<APIResponse> GetStories(StoryParametersRequest storyParametersRequest)
+        //{
+        //    try
+        //    {
+        //        string serializedStories;
+
+        //        List<StoryResponse> stories;
+
+        //        var encodedStories = await distributedCache.GetAsync(BlogServiceOperation.GetStoriesCacheName);
+
+        //        if (encodedStories != null)
+        //        {
+        //            serializedStories = Encoding.UTF8.GetString(encodedStories);
+        //            stories = JsonConvert.DeserializeObject<List<StoryResponse>>(serializedStories);
+        //        }
+        //        else
+        //        {
+        //            var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+        //            UriBuilder url = new UriBuilder(servicesConfig.Blog + BlogServiceOperation.GetStories());
+        //            url.Query = QueryStringHelper.ConvertToQueryString(storyParametersRequest);
+
+        //            var response = await client.GetAsync(url.ToString());
+        //            stories = JsonConvert.DeserializeObject<List<StoryResponse>>(await response.Content.ReadAsStringAsync());
+
+        //            serializedStories = JsonConvert.SerializeObject(stories);
+        //            encodedStories = Encoding.UTF8.GetBytes(serializedStories);
+        //            var options = new DistributedCacheEntryOptions()
+        //                            .SetSlidingExpiration(TimeSpan.FromMinutes(1))
+        //                            .SetAbsoluteExpiration(DateTime.Now.AddHours(1));
+
+        //            await distributedCache.SetAsync(BlogServiceOperation.GetStoriesCacheName, encodedStories, options);
+        //        }
+
+        //        return new APIResponse(stories, HttpStatusCode.OK);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        logger.Error(ex, "Exception in method 'GetStories()'");
+        //        var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+        //        return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+        //    }
+        //}
+        public async Task<APIResponse> GetStories(StoryParametersRequest storyParametersRequest)
+        {
+            try
+            {
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+                UriBuilder url = new UriBuilder(servicesConfig.Blog + BlogServiceOperation.GetStories());
+                url.Query = QueryStringHelper.ConvertToQueryString(storyParametersRequest);
+
+                var response = await client.GetAsync(url.ToString());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var stories = JsonConvert.DeserializeObject<List<StoryResponse>>(await response.Content.ReadAsStringAsync());
+                    foreach (var item1 in stories)
+                    {
+                        byte[] b = System.IO.File.ReadAllBytes(item1.CoverPhotoOrVideo);
+                        item1.CoverPhotoOrVideo = Convert.ToBase64String(b);
+                    }
+                    return new APIResponse(stories, HttpStatusCode.OK);
+                }
+
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'GetStories()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        /// <summary>
+        /// Gets the story.
+        /// </summary>
+        /// <param name="details">The details.</param>
+        /// <returns></returns>
+        public async Task<APIResponse> GetStory(StoryIdDetails details)
+        {
+            try
+            {
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+                var response = await client.GetAsync(servicesConfig.Blog + BlogServiceOperation.GetStory(details.StoryId));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var story = JsonConvert.DeserializeObject<List<StoryResponseDetails>>(await response.Content.ReadAsStringAsync());
+                    foreach (var item1 in story)
+                    {
+                        byte[] b = System.IO.File.ReadAllBytes(item1.CoverPhotoOrVideo);
+                        item1.CoverPhotoOrVideo = Convert.ToBase64String(b);
+                    }
+                    return new APIResponse(story, HttpStatusCode.OK);
+                }
+
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'GetStory()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        /// <summary>
+        /// Gets the TaggedData.
+        /// </summary>
+        /// <param name="details">The details.</param>
+        /// <returns></returns>
+        public async Task<APIResponse> GetTaggedDataByStoryId(StoryIdDetails details)
+        {
+            try
+            {
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+                var response = await client.GetAsync(servicesConfig.Blog + BlogServiceOperation.GetTaggedDataByStoryId(details.StoryId));
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var story = JsonConvert.DeserializeObject<StoryResponseDetails>(await response.Content.ReadAsStringAsync());
+                    var taggedData = story.TaggedData;
+
+                    return new APIResponse(taggedData, HttpStatusCode.OK);
+                }
+
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'GetTaggedDataByStoryId()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        /// <summary>
+        /// Creates the story.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public async Task<APIResponse> CreateStory(CreateStoryRequest request)
+        {
+            try
+            {
+                string filename = "";
+                var folderName = Path.Combine("EventStories");
+                var pathToSave = Path.Combine("D:", "HappyWedding", folderName);
+
+                if (request.CoverPhotoVideo.Length > 0)
+                {
+                    string format = System.IO.Path.GetExtension(request.CoverPhotoVideo.FileName);
+                    filename = request.VendorId + "_Event_" + DateTime.Now + format;
+                    string filenme = filename.Replace(":", ".");
+                    var filePath = Path.Combine(pathToSave, filenme);
+                    using var fileStream = new FileStream(filePath, FileMode.Create);
+                    request.CoverPhotoVideo.CopyTo(fileStream);
+                    request.CoverPhotoOrVideo = filePath;
+                    request.CoverPhotoOrVideo = null;
+                }
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+                var param = JsonConvert.SerializeObject(request);
+                HttpContent contentPost = new StringContent(param, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(servicesConfig.Blog + BlogServiceOperation.CreateStory(), contentPost);
+                if (response.IsSuccessStatusCode)
+                {
+                    var story = JsonConvert.DeserializeObject<StoryResponse>(await response.Content.ReadAsStringAsync());
+                    return new APIResponse(story, HttpStatusCode.Created);
+                }
+
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'CreateStory()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        /// <summary>
+        /// Updates the story.
+        /// </summary>
+        /// <param name="details">The details.</param>
+        /// <param name="request">The request.</param>
+        /// <returns></returns>
+        public async Task<APIResponse> UpdateStory(StoryIdDetails details, UpdateStoryRequest request)
+        {
+            try
+            {
+                string filename = "";
+                var folderName = Path.Combine("EventStories");
+                var pathToSave = Path.Combine("D:", "HappyWedding", folderName);
+
+                if (request.CoverPhotoVideo.Length > 0)
+                {
+                    string format = System.IO.Path.GetExtension(request.CoverPhotoVideo.FileName);
+                    filename = request.VendorId + "_Event_" + DateTime.Now + format;
+                    string filenme = filename.Replace(":", ".");
+                    var filePath = Path.Combine(pathToSave, filenme);
+                    using var fileStream = new FileStream(filePath, FileMode.Create);
+                    request.CoverPhotoVideo.CopyTo(fileStream);
+                    request.CoverPhotoOrVideo = filePath;
+                    request.CoverPhotoOrVideo = null;
+                }
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+                var param = JsonConvert.SerializeObject(request);
+                HttpContent contentPost = new StringContent(param, Encoding.UTF8, "application/json");
+
+                var response = await client.PutAsync(servicesConfig.Blog + BlogServiceOperation.UpdateStory(details.StoryId), contentPost);
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'UpdateStory()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the story.
+        /// </summary>
+        /// <param name="details">The details.</param>
+        /// <returns></returns>
+        public async Task<APIResponse> DeleteStory(StoryIdDetails details)
+        {
+            try
+            {
+                var client = httpClientFactory.CreateClient(BlogServiceOperation.serviceName);
+
+                var response = await client.DeleteAsync(servicesConfig.Blog + BlogServiceOperation.DeleteStory(details.StoryId));
+                return new APIResponse(response.StatusCode);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception in method 'DeleteStory()'");
+                var exMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return new APIResponse(exMessage, HttpStatusCode.InternalServerError);
+            }
+        }
+    }
+}

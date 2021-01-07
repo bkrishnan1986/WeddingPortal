@@ -1,0 +1,298 @@
+<div class="container cntin2">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ">
+                <h5>{{currentDistrict.value}}</h5>
+            </div>
+            <div class="col-lg-8">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-4 ">
+            </div>
+            <div class="col-lg-8">
+
+                <i (click)=" removeTab()" style="font-size: 130%;"
+                    class="icofont-minus-circle float-right col-lg-2"></i>
+                <i (click)=" addTab()" style="font-size: 130%;" class="icofont-plus-circle float-right"></i>
+            </div>
+
+        </div>
+
+    </div>
+    <tabset>
+        <tab *ngFor='let x of districtList[currentDistrictCount].tabList;let i=index' [active]="i+1" 
+            heading="Branch{{i+1}}" id="tab{{i}}">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Listing Address</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <input class=" " [(ngModel)]="x.checklistingAddress" (click)="sameAsCompany(i);" type="checkbox" value="false"> Same as Company Address
+                        <input [disabled]="x.checklistingAddress" class="mt-2" [(ngModel)]="x.listingAddress" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Building Name</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.buildingName" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Flat/Plot/Door No</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.flatPlotDoorNo" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Floor</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.floor" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Street Name</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.streetName" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Locality Name</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.localityName" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Pincode</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.pincode" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Landmark</span>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <input class="mt-2" [(ngModel)]="x.landmark" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Latitude</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <input class="mt-2" [(ngModel)]="x.latitude" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Longitude</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <input class="mt-2" [(ngModel)]="x.longitude" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Established In(year)</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <input class="mt-2" [(ngModel)]="x.establishedYear" id="inpt2" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="container mt-3 bottom-marg">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Services Offered</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <label class="font-size ml-2" *ngFor="let obj of categoryList;let j=index">
+                            <input type="checkbox" class="" (input)="detectCheckBox(j);calCategory(i);" [ngModel]="obj.expression"><span
+                                class="ml-2">{{obj.value}}</span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3 bottom-marg">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <span class="mt-2">Do you want to keep primary contact details same for all services?</span>
+                    </div>
+                    <div class="col-lg-9">
+                        <input type="radio" [(ngModel)]="districtList[currentDistrictCount].keepContact" [value]="true"
+                            (change)="calCategory(i)" /><span class="ml-2"> Yes</span>
+                        <input type="radio" class="ml-2" [(ngModel)]="districtList[currentDistrictCount].keepContact"
+                            (change)="calCategory(i)" [value]="false" /><span class="ml-2">
+                            No</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div *ngIf="districtList[currentDistrictCount].keepContact">
+
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-lg-3 ">
+                            <span class="mt-2">Contact Person</span>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <input class="mt-2" [(ngModel)]="districtList[currentDistrictCount].contactPerson"
+                                id="inpt2" type="text" placeholder="" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-lg-3 ">
+                            <span class="mt-2">Primary Mob No</span>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <input class="mt-2" [(ngModel)]="districtList[currentDistrictCount].primaryMobNo" id="inpt2"
+                                type="text" placeholder="" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container mt-3">
+                    <div class="row">
+                        <div class="col-lg-3 ">
+                            <span class="mt-2">Email Id</span>
+                        </div>
+                        <div class="col-lg-9">
+                            <input class="mt-2" [(ngModel)]="districtList[currentDistrictCount].emailId" id="inpt2"
+                                type="text" placeholder="" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div *ngIf="!districtList[currentDistrictCount].keepContact && x.branchServiceoffered.length>0">
+                <div *ngFor="let k of x.branchServiceoffered">
+                    <label class="col-lg-3 font-size">
+                        {{k.value}}
+                    </label>
+
+
+                    <label class="col-lg-3">
+
+                        <input class="mt-2" [(ngModel)]="k.contactPerson" id="inpt2" type="text"
+                            placeholder="Contact Person" />
+                    </label>
+
+
+                    <label class="col-lg-3">
+                        <input class="mt-2" [(ngModel)]="k.primaryMobNo" id="inpt2" type="text"
+                            placeholder="Primary Mob No" />
+                    </label>
+
+
+                    <label class="col-lg-3">
+                        <input class="mt-2" [(ngModel)]="k.emailId" id="inpt2" type="text" placeholder="Email Id" />
+                    </label>
+
+                </div>
+
+            </div>
+        </tab>
+    </tabset>
+
+    <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  float-right mt-2"
+        (click)="nextStep()">Next</button>
+
+</div>

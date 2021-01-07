@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="MediatR" Version="8.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.1.8" />
+    <PackageReference Include="Twilio" Version="5.52.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Happy.Weddings.Identity.Core\Happy.Weddings.Identity.Core.csproj" />
+    <ProjectReference Include="..\Happy.Weddings.Identity.Infrastructure\Happy.Weddings.Identity.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

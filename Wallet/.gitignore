@@ -1,0 +1,16 @@
+/src/Happy.Weddings.Wallet.API/bin
+/src/Happy.Weddings.Wallet.API/Logs
+/src/Happy.Weddings.Wallet.API/obj
+/src/Happy.Weddings.Wallet.Core/bin
+/src/Happy.Weddings.Wallet.Core/obj
+/src/Happy.Weddings.Wallet.Data/bin
+/src/Happy.Weddings.Wallet.Data/obj
+/src/Happy.Weddings.Wallet.Infrastructure/bin
+/src/Happy.Weddings.Wallet.Infrastructure/obj
+/src/Happy.Weddings.Wallet.Messaging/bin
+/src/Happy.Weddings.Wallet.Messaging/obj
+/src/Happy.Weddings.Wallet.Service/bin
+/src/Happy.Weddings.Wallet.Service/obj
+/.vs
+global.json
+

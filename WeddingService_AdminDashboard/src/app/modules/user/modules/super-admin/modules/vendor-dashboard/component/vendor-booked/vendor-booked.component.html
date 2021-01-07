@@ -1,0 +1,161 @@
+<div class="container cntin2">
+
+    <div class="card">
+        <p-table [value]="vendorServiceSubscription" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+          [rowsPerPageOptions]="[10,15,20]" styleClass="p-datatable-customers p-datatable-gridlines" #dt1>
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="vendorId">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Vendor ID 
+                    <p-columnFilter type="text" field="vendorId" matchMode="equals" display="menu" [showOperator]="false" [showAddButton]="false"></p-columnFilter>
+                </div>
+                <p-sortIcon field="vendorId"></p-sortIcon>
+              </th>
+              <th pSortableColumn="vendorName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Vendor Name 
+                    <p-columnFilter field="vendorName" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                        <ng-template pTemplate="header">
+                          <div class="p-px-3 p-pt-3 p-pb-0">
+                              <span class="p-text-bold">Vendor Name Picker</span>
+                          </div>
+                        </ng-template>
+                        <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                            <p-multiSelect [ngModel]="value" [options]="vendorNameList" (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                                <ng-template let-option pTemplate="item">
+                                  <div class="p-multiselect-representative-option">
+                                    <span class="p-ml-1">{{option.label}}</span>
+                                  </div>
+                                </ng-template>
+                            </p-multiSelect>
+                        </ng-template>
+                    </p-columnFilter>
+                </div>
+                <p-sortIcon field="vendorName"></p-sortIcon>
+              </th>
+              <th pSortableColumn="vendorStatusName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Vendor Status 
+                    <p-columnFilter field="vendorStatusName" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                      <ng-template pTemplate="header">
+                        <div class="p-px-3 p-pt-3 p-pb-0">
+                            <span class="p-text-bold">Vendor Status Picker</span>
+                        </div>
+                      </ng-template>
+                      <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                          <p-multiSelect [ngModel]="value" [options]="vendorStatusNames" (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                              <ng-template let-option pTemplate="item">
+                                <div class="p-multiselect-representative-option">
+                                  <span class="p-ml-1">{{option.label}}</span>
+                                </div>
+                              </ng-template>
+                          </p-multiSelect>
+                      </ng-template>
+                  </p-columnFilter>                     
+                </div>
+                <p-sortIcon field="vendorStatusName"></p-sortIcon>
+              </th>
+              <th pSortableColumn="serviceName">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Category 
+                    <p-columnFilter field="serviceName" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                      <ng-template pTemplate="header">
+                        <div class="p-px-3 p-pt-3 p-pb-0">
+                            <span class="p-text-bold">Category Picker</span>
+                        </div>
+                      </ng-template>
+                      <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                          <p-multiSelect [ngModel]="value" [options]="vendorCategory" (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                              <ng-template let-option pTemplate="item">
+                                <div class="p-multiselect-representative-option">
+                                  <span class="p-ml-1">{{option.label}}</span>
+                                </div>
+                              </ng-template>
+                          </p-multiSelect>
+                      </ng-template>
+                  </p-columnFilter>                    
+                </div>
+                <p-sortIcon field="serviceName"></p-sortIcon>
+              </th>
+              <th pSortableColumn="subscribedOn">
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Onboarded Date 
+                    <p-columnFilter type="date" field="subscribedOn" display="menu" [showOperator]="false" [showAddButton]="false"></p-columnFilter>
+                </div>
+                <p-sortIcon field="subscribedOn"></p-sortIcon>
+              </th>
+              <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Package 
+                    <p-columnFilter field="subscriptionName" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                      <ng-template pTemplate="header">
+                        <div class="p-px-3 p-pt-3 p-pb-0">
+                            <span class="p-text-bold">Package Picker</span>
+                        </div>
+                      </ng-template>
+                      <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                          <p-multiSelect [ngModel]="value" [options]="vendorPackage" (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                              <ng-template let-option pTemplate="item">
+                                <div class="p-multiselect-representative-option">
+                                  <span class="p-ml-1">{{option.label}}</span>
+                                </div>
+                              </ng-template>
+                          </p-multiSelect>
+                      </ng-template>
+                  </p-columnFilter>                      
+                </div>
+              </th> 
+              <th>
+                <div class="p-d-flex p-jc-between p-ai-center">
+                    Location 
+                    <p-columnFilter field="locationName" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                      <ng-template pTemplate="header">
+                        <div class="p-px-3 p-pt-3 p-pb-0">
+                            <span class="p-text-bold">Location Picker</span>
+                        </div>
+                      </ng-template>
+                      <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                          <p-multiSelect [ngModel]="value" [options]="vendorLocation" (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                              <ng-template let-option pTemplate="item">
+                                <div class="p-multiselect-representative-option">
+                                  <span class="p-ml-1">{{option.label}}</span>
+                                </div>
+                              </ng-template>
+                          </p-multiSelect>
+                      </ng-template>
+                  </p-columnFilter> 
+                </div>
+              </th>              
+              <th>Action</th>             
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-vendorService>
+            <tr>
+                <td>{{vendorService.vendorId}}</td>
+                <td>{{vendorService.vendorName}}</td>
+                <td>{{vendorService.vendorStatusName}}</td>
+                <td>{{vendorService.serviceName}}</td>
+                <td>{{vendorService.subscribedOn | date: 'dd/MM/yyyy'}}</td>
+                <td>{{vendorService.subscriptionName}}</td>
+                <td>{{vendorService.locationName}}</td>
+                <td>
+                    <a (click)="viewVendorDetails(vendorService.vendorId)"><i class="fa fa-eye  icon-style icon-color"
+                        title="View"></i>
+                    </a>
+
+                    <a routerLink="/dashboard/sales/invoice-details"><i class="icofont-hand   icon-style"
+                            title="Approve"></i>
+                    </a>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="8">No customers found.</td>
+            </tr>
+          </ng-template>          
+        </p-table>
+      </div>
+</div>

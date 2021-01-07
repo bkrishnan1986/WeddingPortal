@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Happy.Weddings.Identity.API</name>
+    </assembly>
+    <members>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.AccountsController">
+            <summary>
+            AccountsController
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.AccountsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.AccountsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.AccountsController.GetAccountsDetails(Happy.Weddings.Identity.Core.DTO.Requests.Account.AccountParameters)">
+            <summary>
+            Get Login details.
+            </summary>
+            <param name="loginParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.AccountsController.UpdateAccountsPortion(Happy.Weddings.Identity.Core.DTO.Requests.Account.UpdateAccountsPortionRequest)">
+            <summary>
+            Updates account portion values.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController">
+            <summary>
+            KYCDetailsController
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.CreateKYCData(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.KYCDetail.CreateKYCDataRequest)">
+            <summary>
+            Creates the kyc data.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.UpdateKYCData(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.KYCDetail.UpdateKYCDataRequest)">
+            <summary>
+            Updates the kyc data.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.UpdateKYCPortion(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.KYCDetail.UpdateKYCPortionRequest)">
+            <summary>
+            Updates the kyc portion.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.KYCDetailsController.GetKYCDatas(System.Int32)">
+            <summary>
+            Gets the profile.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController">
+            <summary>
+            Wallets multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.GetAllMultiCodes">
+            <summary>
+            Gets All the MultiCodes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.GetMultiCode(System.String)">
+            <summary>
+            Gets the multicode.
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.CreateMultiCode(Happy.Weddings.Identity.Core.DTO.Requests.MultiCode.CreateMultiCodeRequest)">
+            <summary>
+            Creates the Multicode.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.UpdateMultiCode(System.String,Happy.Weddings.Identity.Core.DTO.Requests.MultiCode.UpdateMultiCodeRequest)">
+            <summary>
+            Updates MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiCodesController.DeleteMultiCode(System.String)">
+            <summary>
+            Deletes the MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController">
+            <summary>
+            Wallets multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.GetAllMultiDetails(Happy.Weddings.Identity.Core.DTO.Requests.MultiDetail.MultiDetailParameters)">
+            <summary>
+            Gets All the multidetails.
+            </summary>
+            <param name="multiDetailParameters">The multidetail parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.GetMultiDetailsByCode(System.String)">
+            <summary>
+            Gets the multidetails
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.CreateMultiDetails(Happy.Weddings.Identity.Core.DTO.Requests.MultiDetail.CreateMultiDetailsRequest)">
+            <summary>
+            Creates the multidetail.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.UpdateMultiDetails(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.MultiDetail.UpdateMultiDetailsRequest)">
+            <summary>
+            Updates MultiDetail.
+            </summary>
+            <param name="multidetailId">The multidetail identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.MultiDetailsController.DeleteMultiDetails(System.Int32)">
+            <summary>
+            Deletes the MultiDetail.
+            </summary>
+            <param name="multidetailId">The Multidetail identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.RolesController">
+            <summary>
+            User roles Controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.RolesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.CreateUserRole(Happy.Weddings.Identity.Core.DTO.Requests.UserRole.CreateUserRoleRequest)">
+            <summary>
+            Creates the user role.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.UpdateUserRole(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.UserRole.UpdateUserRoleRequest)">
+            <summary>
+            Updates the user role.
+            </summary>
+            <param name="roleId">The role identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.GetUserRoles(Happy.Weddings.Identity.Core.DTO.Requests.UserRole.UserRoleParameters)">
+            <summary>
+            Gets the user roles.
+            </summary>
+            <param name="roleParameters">The profile parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.GetUserRole(System.Int32)">
+            <summary>
+            Gets the user role.
+            </summary>
+            <param name="roleId">The role identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.RolesController.DeleteUserRole(System.Int32)">
+            <summary>
+            Deletes the user role.
+            </summary>
+            <param name="roleId">The role identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController">
+            <summary>
+            UserProfilesController
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.CreateUserProfile(Happy.Weddings.Identity.Core.DTO.Requests.Profile.CreateUserProfileRequest)">
+            <summary>
+            Creates the user profile.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.UpdateProfile(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.Profile.UpdateUserProfileRequest)">
+            <summary>
+            Updates the profile.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.UpdateUserProfilePortion(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.Profile.UpdateUserProfilePortionRequest)">
+            <summary>
+            Updates the profile.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.GetProfiles(Happy.Weddings.Identity.Core.DTO.Requests.Profile.UserProfileParameters)">
+            <summary>
+            Gets the profiles.
+            </summary>
+            <param name="profileParameters">The profile parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.GetUserProfile(System.Int32)">
+            <summary>
+            Gets the profile.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.DeleteUserProfile(System.Int32)">
+            <summary>
+            Deletes the profile.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.GetUserId(Happy.Weddings.Identity.Core.DTO.Requests.Profile.UserIdParameters)">
+            <summary>
+            Gets the user identifier.
+            </summary>
+            <param name="idParameters">The identifier parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.SendOtp(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.Profile.SendOtpRequest)">
+            <summary>
+            Sends the otp.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Controllers.v1.UserProfilesController.VerifyOtp(System.Int32,Happy.Weddings.Identity.Core.DTO.Requests.Profile.VerifyOtpRequest)">
+            <summary>
+            Verifies the otp.
+            </summary>
+            <param name="profileId">The profile identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.Authorization">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.Authorization.CreateAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <param name="hostingEnvironment"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.HealthCheck">
+            <summary>
+            Extension for adding health checks
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.HealthCheck.AddHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the health checks.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.MVCConfiguration">
+            <summary>
+            Extension for adding MVC related operations
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.MVCConfiguration.AddMVCConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the MVC confihuration.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.ResponseCompression">
+            <summary>
+            Extension for adding response compression
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.ResponseCompression.CreateResponseCompression(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.ResponseCompression.GetMimeTypesForCompression">
+            <summary>
+            Gets the MIME types for compression.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.RouteExtensions">
+            <summary>
+            Adds the route url prefixes
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="routeAttribute">The route attribute.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,System.String)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="prefix">The prefix.</param>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.RoutePrefixConvention">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.IApplicationModelConvention" />
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.RoutePrefixConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Identity.API.Extensions.RoutePrefixConvention"/> class.
+            </summary>
+            <param name="route">The route.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.RoutePrefixConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            Called to apply the convention to the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.
+            </summary>
+            <param name="application">The <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.</param>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.ServicesInjection">
+            <summary>
+            Extension for adding object injection lifetime
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.ServicesInjection.AddServicesInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the services injection.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="HostingEnvironment">The hosting environment.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Extensions.SwaggerConfiguration">
+            <summary>
+            Extension for adding swagger documentation
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Extensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Filters.APIAuthorizeAttribute">
+            <summary>
+            AuthorizeFilter Class.
+            </summary>
+        </member>
+        <member name="P:Happy.Weddings.Identity.API.Filters.APIAuthorizeAttribute.Permission">
+            <summary>
+            Gets or sets permission.
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Filters.APIAuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            OnAuthorization method.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Filters.SerilogPropertyFilter">
+            <summary>
+            Serilog filter for adding dynamic properties
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Identity.API.Filters.SerilogPropertyFilter._next">
+            <summary>
+            The next
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Filters.SerilogPropertyFilter.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Identity.API.Filters.SerilogPropertyFilter" /> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Filters.SerilogPropertyFilter.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Program">
+            <summary>
+            Program starts here
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Identity.API.Startup">
+            <summary>
+            Base method for intilaizing the services
+            </summary>
+        </member>
+        <member name="P:Happy.Weddings.Identity.API.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:Happy.Weddings.Identity.API.Startup.HostingEnvironment">
+            <summary>
+            Gets the hosting environment.
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Identity.API.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Happy.Weddings.Identity.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

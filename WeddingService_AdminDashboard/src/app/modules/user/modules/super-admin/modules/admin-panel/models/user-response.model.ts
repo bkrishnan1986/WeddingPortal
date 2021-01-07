@@ -1,0 +1,46 @@
+import { ProfilePermission } from './profile-permission.model';
+
+export class UserResponseModel {
+    profilepermission: ProfilePermission[];
+    companyDistricts: [];
+    id: number;
+    userId: string;
+    employeeId: string;
+    firstName: string;
+    lastName: null;
+    primaryMobileNumber: string;
+    email: string;
+    country: 20;
+    state: 20;
+    gender: 0;
+    address: string;
+    photo: null;
+    role: 23;
+    userName: string;
+    password: string;
+    aadhar: string;
+    pan: string;
+    bankAccountNumber: string;
+    ifsc: string;
+    companyName: string;
+    companyCode: string;
+    companyLogo: string;
+    active: 1;
+    approvalStatus: 20;
+    createdBy: 0;
+    createdAt: string;
+    updatedBy: string;
+    updatedAt: string;
+    secondaryMobileNumber: string;
+    listingName: string;
+    listingAddress: string;
+    listingPincode: string;
+    website: string;
+    facebookLink: string;
+    instagramLink: string;
+    pintrestLink: string;
+    twitterHandle: string;
+    district: string;
+    primaryContactPerson: string;
+    companyPincode: string;
+}

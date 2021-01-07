@@ -1,0 +1,297 @@
+<div class="container">
+  <div class="container cntin2  mt-5">
+    <div class="container ">
+      <h4 class="mt-2">Manual Wallet Deduction</h4>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-5"><br />
+          <span class="respfnt">Enter lead ID</span>
+        </div>
+        <div class="col-lg-7 col-md-9 col-sm-8 col-7">
+          <input class="mt-2" #leadId id="inpt" type="text" placeholder="" (change)="getWalletLeadDetails(leadId.value)" />
+        </div>
+      </div>
+    </div>
+    <div class="container " *ngIf="isleadExists">
+      <div id="det" class="col-lg-12 mt-3">
+      <form [formGroup]="walletDeducationForm">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row d-flex">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 pt-2  respfnt">Created Date</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left pt-2 pl-3 txthd respfnt">
+                  {{CreatedDate}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4  col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Created Time</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left  pl-3 respfnt">
+                  {{CreatedTime}}
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Lead Owner</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left  pl-3 respfnt">
+                  {{LeadOwner}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Approved date</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left  pl-3 respfnt">
+                  {{ApprovedDate}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Authorized date</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt pl-3">
+                  {{AuthorizedDate}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 pt-2 respfnt">Customer Name</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left pt-2 respfnt pl-3">
+                  {{CustomerName}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Location</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left pl-3 respfnt">
+                  {{Location}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Event type</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{Eventtype}}
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p id="answ" class="text-left pl-3 respfnt">Event Date</p>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{EventDate}}
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Budget proposed</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{Budgetproposed}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 pt-2 respfnt">Category</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt pt-2 pl-3">
+                  {{CategoryName}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt ">Vendor ID</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{VendorID}}
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Vendor Name</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt pl-3">
+                  {{VendorName}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt ">Category</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{VendorCategory}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Lead Mode</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left respfnt  pl-3">
+                  {{LeadMode}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 pt-2 respfnt">Value</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left pt-2 pl-3 respfnt">
+                  {{Value}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Wallet status</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left pl-3 respfnt">
+                  {{Walletstatus}}
+                   <!-- <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Invoice Number</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <input formControlName="invoicenumber" id="txtinvoicenumber" class="mt-2" type="text"/>
+                <div *ngIf="formSubmitted && form.invoicenumber.errors?.required" class="valid-error">Invoice Number is
+                  required.</div>
+                  <div *ngIf="formSubmitted && form.invoicenumber.hasError('pattern')" class="valid-error">Invoice Number 
+                    allow only numbers.</div>
+                <!-- <p id="answ" class="text-left  pl-3 respfnt">
+                  {{InvoiceNumber}}
+                  <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Invoice date</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <input formControlName="invoicedate" id="txtinvoicedate" class="mt-2" type="text"
+                [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY',adaptivePosition: true }" bsDatepicker />
+                <div *ngIf="formSubmitted && form.invoicedate.errors?.required" class="valid-error">Invoice Date is
+                  required.</div>
+                <!-- <p id="answ" class="text-left  pl-3 respfnt">
+                  {{Invoicedate}}
+                  <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Actual Invoice amount</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <input formControlName="actualinvoiceamount" id="txtactualInvoiceamount" class="mt-2" type="text"/>
+                <div *ngIf="formSubmitted && form.actualinvoiceamount.errors?.required" class="valid-error">Actual Invoice amount is
+                  required.</div>
+                  <div *ngIf="formSubmitted && form.actualinvoiceamount.hasError('pattern')" class="valid-error">Actual Invoice amount 
+                    allow only numbers.</div>                  
+                <!-- <p id="answ" class="text-left  pl-3 respfnt">
+                  {{ActualInvoiceamount}}
+                  <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Wallet Balance</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <input formControlName="walletbalanceamount" id="txtWalletBalanceAmount" class="mt-2" type="text"/>
+                <div *ngIf="formSubmitted && form.walletbalanceamount.errors?.required" class="valid-error">Wallet balance amount is
+                  required.</div>
+                <div *ngIf="formSubmitted && form.walletbalanceamount.hasError('pattern')" class="valid-error">Wallet balance amount 
+                    allow only numbers.</div>                   
+                <!-- <p id="answ" class="text-left  pl-3 respfnt">
+                  {{WalletBalanceAmount}}
+                  <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Amount to be deducted </p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <input formControlName="amounttobededucted" id="txtAmounttobededucted" class="mt-2" type="text"/>
+                <div *ngIf="formSubmitted && form.amounttobededucted.errors?.required" class="valid-error">Amount to be deducted is
+                  required.</div>
+                <div *ngIf="formSubmitted && form.amounttobededucted.hasError('pattern')" class="valid-error">Amount to be deducted 
+                    allow only numbers.</div>                  
+                <!--<p id="answ" class="text-left  pl-3 respfnt">
+                  {{Amounttobededucted}}
+                  <a href=""><i
+                      class="icofont-pencil-alt-2 float-right mr-3"></i></a></p>-->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-6">
+                <p class="text-left pl-3 respfnt">Deducted date</p>
+              </div>
+              <div class="col-lg-8  col-md-8 col-sm-8 col-6">
+                <p id="answ" class="text-left  pl-3 respfnt">
+                  {{Deducteddate}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+      <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  mx-auto d-block mt-2" (click)="SubmitDeduction(walletDeducationForm)">DEDUCT</button>
+    </div>
+    <div class="container " style="padding: 10%;" *ngIf="!isleadExists">
+      Lead ID Not found !!!
+    </div>
+  </div>
+</div>

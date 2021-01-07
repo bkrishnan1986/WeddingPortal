@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.6" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Happy.Weddings.Wallet.Core\Happy.Weddings.Wallet.Core.csproj" />
+    <ProjectReference Include="..\Happy.Weddings.Wallet.Service\Happy.Weddings.Wallet.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Receiver\v1\" />
+  </ItemGroup>
+
+</Project>

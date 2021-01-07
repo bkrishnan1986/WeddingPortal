@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Happy.Weddings.LeadManagement.Core</AssemblyName>
+    <RootNamespace>Happy.Weddings.LeadManagement.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\ILeadRepository.cs~RFcff7ba1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

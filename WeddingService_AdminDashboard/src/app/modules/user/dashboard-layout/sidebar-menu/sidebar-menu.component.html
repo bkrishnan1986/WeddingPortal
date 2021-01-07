@@ -1,0 +1,313 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a routerLink="superadmin" class="brand-link">
+        <img src="assets/img/happywedding.png" class="brand-image img-circle elevation-3" style="opacity: .8" />
+        <span class="brand-text font-weight-light">Wedding Services</span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex flex-column">
+            <div class="image">
+                <img src="assets/img/jon-snow.png" class="img-circle elevation-2" alt="User Image" />
+            </div>
+            <div class="info user-info">
+                <a href="#" class="d-block">Jon Snow</a>
+                <a class="d-block">Administrator</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="superadmin/home" routerLinkActive="active">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Home
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link" [ngClass]="{'active': adminPanel1.isActive || adminPanel2.isActive}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Admin Panel
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/admin-panel" routerLinkActive="active"
+                                #adminPanel1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Create User</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/admin-panel/admin-settings"
+                                routerLinkActive="active" #adminPanel2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Admin Settings</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/admin-panel/service-attributes"
+                                routerLinkActive="active" #adminPanel2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Service Attributes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/admin-panel/package-settings"
+                                routerLinkActive="active" #adminPanel2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Package Settings</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link"
+                        [ngClass]="{'active': vendorManagement1.isActive || vendorManagement2.isActive || vendorManagement3.isActive || vendorManagement4.isActive}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Vendor Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-dashboard/vendor-booked-view"
+                                routerLinkActive="active" #vendorManagement1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendor Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-management/basic-details"
+                                routerLinkActive="active" #vendorManagement2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Create Vendor</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-management/vendor-profile"
+                                routerLinkActive="active" #vendorManagement3="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendor Profile</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-management/vendor-bookings"
+                                routerLinkActive="active" #vendorManagement4="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendor Bookings</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link"
+                        [ngClass]="{'active': leadManagement1.isActive || leadManagement2.isActive || leadManagement3.isActive || leadManagement4.isActive || leadManagement5.isActive || leadManagement6.isActive || leadManagement7.isActive}">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <p>
+                            Lead Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/create-lead"
+                                routerLinkActive="active" #leadManagement1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Create Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/view-lead"
+                                routerLinkActive="active" #leadManagement2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/approve-lead"
+                                routerLinkActive="active" #leadManagement3="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Approve Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/authorize-lead"
+                                routerLinkActive="active" #leadManagement4="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Authorize Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/get-quotes"
+                                routerLinkActive="active" #leadManagement5="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Get Quotes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/assign-lead"
+                                routerLinkActive="active" #leadManagement6="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Assign Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/lead-management/golden-lead"
+                                routerLinkActive="active" #leadManagement7="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Golden Lead</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link"
+                        [ngClass]="{'active': walletManagement1.isActive || walletManagement2.isActive || walletManagement3.isActive || walletManagement4.isActive || walletManagement5.isActive}">
+                        <i class="nav-icon fas fa-wallet"></i>
+                        <p>
+                            Wallet Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-dashboard/wallet-management/wallet-rule"
+                                routerLinkActive="active" #walletManagement1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Wallet Rule</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-dashboard/wallet-management/view-wallet"
+                                routerLinkActive="active" #walletManagement2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Wallet</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                routerLink="superadmin/vendor-dashboard/wallet-management/manual-wallet-deduction"
+                                routerLinkActive="active" #walletManagement3="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manual Wallet Deduction</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-dashboard/wallet-management/pause-release"
+                                routerLinkActive="active" #walletManagement4="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Pause/Release</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                routerLink="superadmin/vendor-dashboard/wallet-management/manual-wallet-adjustment"
+                                routerLinkActive="active" #walletManagement5="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manual Wallet Adjustment</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/vendor-dashboard/wallet-management/vendor-wallet"
+                                routerLinkActive="active" #walletManagement5="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendor's Wallet</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a class="nav-link"
+                        [ngClass]="{'active': paymentPanel1.isActive || paymentPanel2.isActive || paymentPanel3.isActive || paymentPanel4.isActive}">
+                        <i class="nav-icon far fa-credit-card"></i>
+                        <p>
+                            Payment Panel
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/payment/payment-book" routerLinkActive="active"
+                                #paymentPanel1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Payment Book</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/payment/payment-desk"
+                                routerLinkActive="active" #paymentPanel2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Payment Desk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/payment/payment-refund" routerLinkActive="active"
+                                #paymentPanel3="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Refund</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/payment/payment-invoice" routerLinkActive="active"
+                                #paymentPanel4="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Invoice</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a class="nav-link"
+                        [ngClass]="{'active': reports1.isActive || reports2.isActive || reports3.isActive || reports4.isActive || reports5.isActive }">
+                        <i class="nav-icon far fa-file-alt"></i>
+                        <p>
+                            Reports
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview m-l-25">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/reports/users" routerLinkActive="active"
+                                #reports1="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Users</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/reports/vendors" routerLinkActive="active"
+                                #reports2="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vendors</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/reports/lead" routerLinkActive="active"
+                                #reports3="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lead</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/reports/wallet" routerLinkActive="active"
+                                #reports4="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Wallet</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="superadmin/reports/payment" routerLinkActive="active"
+                                #reports5="routerLinkActive">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Payment</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

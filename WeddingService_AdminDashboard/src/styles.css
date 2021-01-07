@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+/*cursor*/
+.cursor-click {
+    cursor: pointer;
+}
+/*****/
+/*form*/
+.valid-error
+{
+    color: red;
+    font-size: 13px;
+}
+.valid-success
+{
+    color: green;
+    font-size: 13px;
+}
+/*****/
+
+.full-width {
+    width: 100%;
+}
+.m-l-25 {
+    margin-left: 25px;
+}
+.mt-15 {
+    margin-top: 15px;
+  }
+
+.padding-20 {
+	padding: 20px;
+}
+.pull-right {
+    float: right;
+}
+.multiselect-dropdown{
+    box-shadow: 0 0 5pt 2pt #D3D3D3 !important;
+    padding: 12px 12px !important;
+}
+.bottom-marg{
+    margin-bottom: 37px !important;
+}
+.font-size{
+    font-weight:normal!important;
+}
+.remove-bott-marg{
+    margin-bottom: -19px!important;
+}
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+    z-index: 99999 !important;
+}

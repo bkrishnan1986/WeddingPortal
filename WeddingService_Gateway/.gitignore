@@ -1,0 +1,14 @@
+/src/Happy.Weddings.Gateway.API/bin
+/src/Happy.Weddings.Gateway.API/Logs
+/src/Happy.Weddings.Gateway.API/obj
+/src/Happy.Weddings.Gateway.Core/bin
+/src/Happy.Weddings.Gateway.Core/obj
+/src/Happy.Weddings.Gateway.Infrastructure/bin
+/src/Happy.Weddings.Gateway.Infrastructure/obj
+/src/Happy.Weddings.Gateway.Messaging/bin
+/src/Happy.Weddings.Gateway.Messaging/obj
+/src/Happy.Weddings.Gateway.Service/bin
+/src/Happy.Weddings.Gateway.Service/obj
+/.vs
+global.json
+

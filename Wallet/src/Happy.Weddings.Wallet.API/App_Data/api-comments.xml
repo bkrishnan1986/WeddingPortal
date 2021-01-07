@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Happy.Weddings.Wallet.API</name>
+    </assembly>
+    <members>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController">
+            <summary>
+            Wallets multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.GetAllMultiCodes">
+            <summary>
+            Gets All the MultiCodes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.GetMultiCode(System.String)">
+            <summary>
+            Gets the multicode.
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.CreateMultiCode(Happy.Weddings.Wallet.Core.DTO.Requests.MultiCode.CreateMultiCodeRequest)">
+            <summary>
+            Creates the Multicode.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.UpdateMultiCode(System.String,Happy.Weddings.Wallet.Core.DTO.Requests.MultiCode.UpdateMultiCodeRequest)">
+            <summary>
+            Updates MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiCodesController.DeleteMultiCode(System.String)">
+            <summary>
+            Deletes the MultiCode.
+            </summary>
+            <param name="code">System Code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController">
+            <summary>
+            Wallets multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.GetAllMultiDetails(Happy.Weddings.Wallet.Core.DTO.Requests.MultiDetail.MultiDetailParameters)">
+            <summary>
+            Gets All the multidetails.
+            </summary>
+            <param name="multiDetailParameters">The multidetail parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.GetMultiDetailsByCode(System.String)">
+            <summary>
+            Gets the multidetails
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.CreateMultiDetails(Happy.Weddings.Wallet.Core.DTO.Requests.MultiDetail.CreateMultiDetailsRequest)">
+            <summary>
+            Creates the multidetail.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.UpdateMultiDetails(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.MultiDetail.UpdateMultiDetailsRequest)">
+            <summary>
+            Updates MultiDetail.
+            </summary>
+            <param name="multidetailId">The multidetail identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.MultiDetailsController.DeleteMultiDetails(System.Int32)">
+            <summary>
+            Deletes the MultiDetail.
+            </summary>
+            <param name="multidetailId">The Multidetail identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController">
+            <summary>
+            PaymentBook operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.GetAllPaymentBook(Happy.Weddings.Wallet.Core.DTO.Requests.PaymentBook.PaymentBookSearchParameter)">
+            <summary>
+            Gets the PaymentBook
+            </summary>
+            <param name="paymentBookSearchParameter">The PaymentBook Search Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.GetPaymentBookDetails(System.Int32)">
+            <summary>
+            Get the PaymentBook
+            </summary>
+            <param name="paymentBookId">The PaymentBook identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.CreatePaymentBook(Happy.Weddings.Wallet.Core.DTO.Requests.PaymentBook.CreatePaymentBookRequest)">
+            <summary>
+            Create the PaymentBook
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.PaymentBookController.UpdatePaymentBook(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.PaymentBook.UpdatePaymentBookRequest)">
+            <summary>
+            Updates PaymentBook.
+            </summary>
+            <param name="paymentBookId">The PaymentBook identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.RefundController">
+            <summary>
+            Refund operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.RefundController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.GetAllRefund(Happy.Weddings.Wallet.Core.DTO.Requests.Refund.RefundParameter)">
+            <summary>
+            Gets the Refund
+            </summary>
+            <param name="refundParameter">The Refund Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.GetRefundDetails(System.Int32)">
+            <summary>
+            Get the Refund
+            </summary>
+            <param name="refundId">The Refund identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.CreateRefund(Happy.Weddings.Wallet.Core.DTO.Requests.Refund.CreateRefundRequest)">
+            <summary>
+            Create the Refund
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.RefundController.UpdateRefund(System.Int32,System.Boolean,System.Boolean,Happy.Weddings.Wallet.Core.DTO.Requests.Refund.UpdateRefundRequest)">
+            <summary>
+            Updates PaymentBook.
+            </summary>
+            <param name="refundId">The Refund identifier.</param>
+            <param name="request">The request.</param>
+            <param name="IsApproved">IsApproved status.</param>
+            <param name="IsRejected">IsRejected status.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController">
+            <summary>
+            Transactions operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController.GetAllTransactions(Happy.Weddings.Wallet.Core.DTO.Requests.Transactions.TransactionsParameter)">
+            <summary>
+            Gets All Transactions
+            </summary>
+            <param name="transactionsParameter">The Transactions Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController.GetTransactionsById(System.Int32)">
+            <summary>
+            Get the Transactions
+            </summary>
+            <param name="transactionId">The Transactions identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.TransactionsController.CreatePaymentBook(Happy.Weddings.Wallet.Core.DTO.Requests.Transactions.CreateTransactionsRequest)">
+            <summary>
+            Create the Transactions
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController">
+            <summary>
+            Wallet Adjustment operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.GetAllWalletAdjustment(Happy.Weddings.Wallet.Core.DTO.Requests.WalletAdjustment.WalletAdjustmentParameter)">
+            <summary>
+            Gets the Wallet Adjustment
+            </summary>
+            <param name="walletAdjustmentParameter">The Wallets Adjustment Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.GetWalletAdjustmentDetails(System.Int32)">
+            <summary>
+            Get the Wallet Adjustment
+            </summary>
+            <param name="walletAdjustmentId">The Wallet Adjustment identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.CreateWalletAdjustment(Happy.Weddings.Wallet.Core.DTO.Requests.WalletAdjustment.CreateWalletAdjustmentRequest)">
+            <summary>
+            Create the Wallet Adjustment
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.UpdateWalletAdjustment(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.WalletAdjustment.UpdateWalletAdjustmentRequest)">
+            <summary>
+            Updates Wallet Adjustment.
+            </summary>
+            <param name="walletAdjustmentId">The Wallet Adjustment identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletAdjustmentController.DeleteWalletAdjustment(System.Int32)">
+            <summary>
+            Deletes the Wallet Adjustment.
+            </summary>
+            <param name="walletAdjustmentId">The Wallet Adjustment identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController">
+            <summary>
+            WalletDeduction operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.GetAllWalletDeduction(Happy.Weddings.Wallet.Core.DTO.Requests.WalletDeduction.WalletDeductionParameter)">
+            <summary>
+            Gets the Wallet Deduction
+            </summary>
+            <param name="walletDeductionParameter">The Wallets Deduction Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.GetWalletDeductionDetails(System.Int32)">
+            <summary>
+            Get the Wallet Deduction
+            </summary>
+            <param name="walletDeductionId">The Wallet Deduction identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.CreateWalletDeduction(Happy.Weddings.Wallet.Core.DTO.Requests.WalletDeduction.CreateWalletDeductionRequest)">
+            <summary>
+            Create the Wallet Deduction
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.UpdateWalletDeduction(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.WalletDeduction.UpdateWalletDeductionRequest)">
+            <summary>
+            Updates Wallet Deduction.
+            </summary>
+            <param name="walletDeductionId">The Wallet Deduction identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletDeductionController.DeleteWalletDeduction(System.Int32)">
+            <summary>
+            Deletes the Wallet Deduction.
+            </summary>
+            <param name="walletDeductionId">The Wallet Deduction identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController">
+            <summary>
+            WalletRule operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.GetAllWalletRules(Happy.Weddings.Wallet.Core.DTO.Requests.WalletRule.WalletRuleParameter)">
+            <summary>
+            Gets the WalletRules
+            </summary>
+            <param name="walletRuleParameter">The Wallet Rule Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.GetWalletRuleDetails(System.Int32)">
+            <summary>
+            Get the Wallet Rule By WalletRuleId
+            </summary>
+            <param name="walletRuleId">The WalletRule identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.CreateWalletRule(Happy.Weddings.Wallet.Core.DTO.Requests.WalletRule.CreateWalletRuleRequest)">
+            <summary>
+            Create the Wallet Rule
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.UpdateWalletRule(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.WalletRule.UpdateWalletRuleRequest)">
+            <summary>
+            Updates Wallet Rule.
+            </summary>
+            <param name="walletRuleId">The Wallet Rule identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletRuleController.DeleteWalletRule(System.Int32)">
+            <summary>
+            Deletes the Wallet Rule.
+            </summary>
+            <param name="walletRuleId">The Wallet Rule identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController">
+            <summary>
+            Wallet operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.GetAllWallets(Happy.Weddings.Wallet.Core.DTO.Requests.Wallet.WalletsParameter)">
+            <summary>
+            Gets the Wallet
+            </summary>
+            <param name="walletsParameter">The Wallets Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.GetWalletDetails(System.Int32)">
+            <summary>
+            Get the Wallet
+            </summary>
+            <param name="walletId">The Wallet identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.CreateWallet(Happy.Weddings.Wallet.Core.DTO.Requests.Wallet.CreateWalletRequest)">
+            <summary>
+            Create the Wallet
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.UpdateWallet(System.Int32,System.Boolean,System.Boolean,System.Boolean,Happy.Weddings.Wallet.Core.DTO.Requests.Wallet.UpdateWalletRequest)">
+            <summary>
+            Updates Wallet.
+            </summary>
+            <param name="walletId">The Wallet identifier.</param>
+            <param name="IsPaused">IsPaused Status.</param>
+            <param name="IsReleased">IsReleased Status.</param>
+            <param name="IsChurned">IsChurned Status.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletsController.DeleteWallet(System.Int32)">
+            <summary>
+            Deletes the Wallet.
+            </summary>
+            <param name="walletId">The Wallet identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController">
+            <summary>
+            Wallet Status operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.GetAllWalletStatus(Happy.Weddings.Wallet.Core.DTO.Requests.WalletStatus.WalletStatusParameter)">
+            <summary>
+            Gets the Wallet Status
+            </summary>
+            <param name="walletStatusParameter">The Wallet Status Parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.GetWalletStatusDetails(System.Int32)">
+            <summary>
+            Get the Wallet Status
+            </summary>
+            <param name="walletStatusId">The Wallet Status identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.CreateWalletStatus(Happy.Weddings.Wallet.Core.DTO.Requests.WalletStatus.CreateWalletStatusRequest)">
+            <summary>
+            Create the Wallet Status
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.UpdateWalletStatus(System.Int32,Happy.Weddings.Wallet.Core.DTO.Requests.WalletStatus.UpdateWalletStatusRequest)">
+            <summary>
+            Updates Wallet Status.
+            </summary>
+            <param name="walletStatusId">The Wallet Status identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Controllers.v1.WalletStatusController.DeleteWalletStatus(System.Int32)">
+            <summary>
+            Deletes the Wallet Status.
+            </summary>
+            <param name="walletStatusId">The Wallet Status identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.HealthCheck">
+            <summary>
+            Extension for adding health checks
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.HealthCheck.AddHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the health checks.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.MVCConfiguration">
+            <summary>
+            Extension for adding MVC related operations
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.MVCConfiguration.AddMVCConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the MVC confihuration.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.ResponseCompression">
+            <summary>
+            Extension for adding response compression
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.ResponseCompression.CreateResponseCompression(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.ResponseCompression.GetMimeTypesForCompression">
+            <summary>
+            Gets the MIME types for compression.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.RouteExtensions">
+            <summary>
+            Adds the route url prefixes
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="routeAttribute">The route attribute.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,System.String)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="prefix">The prefix.</param>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.RoutePrefixConvention">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.IApplicationModelConvention" />
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.RoutePrefixConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Extensions.RoutePrefixConvention"/> class.
+            </summary>
+            <param name="route">The route.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.RoutePrefixConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            Called to apply the convention to the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.
+            </summary>
+            <param name="application">The <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.</param>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.ServicesInjection">
+            <summary>
+            Extension for adding object injection lifetime
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.ServicesInjection.AddServicesInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the services injection.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="HostingEnvironment">The hosting environment.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Extensions.SwaggerConfiguration">
+            <summary>
+            Extension for adding swagger documentation
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Extensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Filters.SerilogPropertyFilter">
+            <summary>
+            Serilog filter for adding dynamic properties
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Wallet.API.Filters.SerilogPropertyFilter._next">
+            <summary>
+            The next
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Filters.SerilogPropertyFilter.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Filters.SerilogPropertyFilter" /> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Filters.SerilogPropertyFilter.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Program">
+            <summary>
+            Program starts here
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Wallet.API.Startup">
+            <summary>
+            Base method for intilaizing the services
+            </summary>
+        </member>
+        <member name="P:Happy.Weddings.Wallet.API.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:Happy.Weddings.Wallet.API.Startup.HostingEnvironment">
+            <summary>
+            Gets the hosting environment.
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Wallet.API.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Happy.Weddings.Wallet.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

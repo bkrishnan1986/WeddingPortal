@@ -1,0 +1,41 @@
+<div class="container cntin2">
+    <div class="row">
+        <div class="col-lg-4 ">
+            <h5 class="heading-style">Mobile Number Verification</h5>
+        </div>
+        <div class="col-lg-8">
+        </div>
+    </div>
+    <br /><br />
+    <div class="container">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th><label>Contact Number</label></th>
+                    <th><label>City</label></th>
+                    <th><label>Action</label></th>
+                    <th><label>Verified Status</label></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wedding Caterers</td>
+                    <td>{{district}}</td>
+                    <td><button type="button" id="btn1bg9" (click)="sendOtp()" class="btn btn-warning btn-lg">Send OTP</button> &nbsp;
+                        &nbsp;
+                        <input id="inpt2" [(ngModel)]="otp" type="text" placeholder="OTP" />
+                        &nbsp;
+                        &nbsp; <button type="button" id="btn1bg9" (click)="verifyOtp()" class="btn btn-warning btn-lg">Verify
+                            OTP</button>
+                    </td>
+                    <td><i *ngIf="!checkOtp" class="icofont-close"></i> <i *ngIf="checkOtp" class="icofont-check"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="float-right ">
+        <button type="button" id="btn1bg6" class="btn btn-warning btn-lg">Previous</button>
+        <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  float-right m-l-10"
+            (click)="next()"><a>Next</a></button>
+    </div>
+</div>

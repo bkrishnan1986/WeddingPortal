@@ -1,0 +1,28 @@
+.border {
+  border: 1px solid #FF8A00 !important;
+  padding: 20px;
+  margin: 20px;
+  float: right;
+  text-align: center;
+}
+.row{
+  display: grid;
+  padding:10px;
+}
+.icon-style {
+  color: #FF8A00 ;
+  font-size: 25px;
+}
+.small-font{
+  color: #6b6969;
+  font-size: 16px;
+}
+.fa-check{
+  border-width: 3px;
+    text-align: center;
+    border-style: solid;
+    border-color: orange;
+    border-image: initial;
+    border-radius: 50% 50% 50% 50%;
+    padding: 1% 1% 1% 1%;
+}

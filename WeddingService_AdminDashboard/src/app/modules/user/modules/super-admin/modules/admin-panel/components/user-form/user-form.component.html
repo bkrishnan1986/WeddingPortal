@@ -1,0 +1,135 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9">
+      <h3 class="mt-4">{{headerTitle}}</h3>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-5"><i class="icofont-ui-calendar"></i>Date & Time</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="dateAndTime" />
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-pen-alt-2"></i>Created By</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="createdBy" />
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-address-book"></i>User Id</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="userId" />
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-users-alt-4"></i>User Role</span>
+            </div>
+            <div class="col-lg-8">
+              <select class="mt-2 form-control" id="inpt2" formControlName="role">
+                <option value="">Select User Role</option>
+                <option *ngFor="let item of userRolesList" [value]="item.id">{{item.value}}
+                </option>
+              </select>
+              <div *ngIf="formSubmitted && form.role.errors?.required" class="valid-error">Role Name is
+                required.</div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-address-book"></i>Emp Id</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="employeeId" />
+              <div *ngIf="formSubmitted && form.employeeId.errors?.required" class="valid-error">Emp ID is
+                required.</div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-user-alt-6"></i>Emp Name</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="firstName" />
+              <div *ngIf="formSubmitted && form.firstName.errors?.required" class="valid-error">Emp Name
+                is
+                required.</div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mt-15">
+              <span class="mt-2"><i class="icofont-email"></i>Mail ID</span>
+            </div>
+            <div class="col-lg-8">
+              <input class="mt-2" id="inpt2" type="text" placeholder="" formControlName="email" />
+              <div *ngIf="formSubmitted && form.email.errors?.required" class="valid-error">Mail ID is
+                required.</div>
+              <div *ngIf="formSubmitted && form.email.errors?.pattern" class="valid-error">Enter a valid Email Id</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="container mt-5"><br><br>
+
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th colspan="2" class="text-center">User Rights</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of userRights; let i= index;" class="text-center">
+                  <td width="50%">{{item.value}}</td>
+                  <td width="50%"><input class="ml-5" type="checkbox" [value]="item.value" [checked]="hasValueSelected(item.value)"
+                      [disabled]="showEdit" (change)="onChecked($event)"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+
+    <div class="row">
+      <div class="col-md-6 ml-16 mt-3">
+        <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  ml-3" *ngIf="showEdit"
+          (click)="enableEdit();">EDIT</button>
+        <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  ml-3" *ngIf="!showEdit"
+          (click)="saveUser(userForm);">SUBMIT</button>
+        <button type="button" id="btn1bg6" class="btn btn-warning btn-lg ml-3"
+          (click)="redirectToUserList()">Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>

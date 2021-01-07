@@ -1,0 +1,15 @@
+.card-style{
+    min-height: 445px;
+}
+.m-r-10{
+    margin-right:10px;
+}
+.m-b-10{
+    margin-bottom: 10px;
+}
+.padding-15{
+    padding:15px;
+}
+#collap{
+cursor: pointer;
+}

@@ -1,0 +1,124 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Follow Up Details</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="col-md-12 mt-4">
+
+        <!-- <table class="table  table-bordered">
+            <thead class="mt-3">
+                <tr>
+                    <th class="dtahed respfnt">Call Date & Time</th>
+                    <th class="dtahed respfnt">Followed By</th>
+                    <th class="dtahed respfnt">Upload File</th>
+                    <th class="dtahed respfnt">Remarks</th>
+                    <th class="dtahed respfnt">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of leadFollowUpData">
+                    <td class="dta respfnt">Lorem</td>
+                    <td class="dta respfnt">Lorem</td>
+                    <td class="dta respfnt">Lorem</td>
+                    <td class="dta respfnt">Lorem</td>
+                    <td class="dta respfnt">Lorem</td>
+                </tr>
+
+            </tbody>
+        </table> -->
+
+        <form [formGroup]="followUpForm" class="mt-3">
+
+            <table class="table table-bordered">
+                <thead class="mt-3">
+                    <tr>
+                        <th class="dtahed respfnt">Call Date & Time</th>
+                        <th class="dtahed respfnt">Followed By</th>
+                        <th class="dtahed respfnt">Upload File</th>
+                        <th class="dtahed respfnt">Remarks</th>
+                        <th class="dtahed respfnt">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody formArrayName="newFollowUp"
+                    *ngFor="let followUpItems of newFollowUpForms.controls; let i = index;">
+                    <tr [formGroupName]="i">
+                        <td>
+                            <input class="form-control" formControlName="callDateTime" placeholder="Select Date & Time"
+                                [owlDateTime]="callDateTime" [owlDateTimeTrigger]="callDateTime">
+                            <owl-date-time #callDateTime [hour12Timer]="true"></owl-date-time>
+                        </td>
+
+                        <td>
+                            <select formControlName="followedBy" class="form-control">
+                                <option value="" disabled>Select</option>
+                                <!-- <option *ngFor="let user of usersList" value="{{user.id}}">
+                                    {{user.name}}</option> -->
+                            </select>
+                        </td>
+
+                        <td>
+                            <label> {{fileName}}
+                                <input #fileInput type="file" formControlName="uploadedFile">
+                              </label>
+                        </td>
+
+                        <td>
+                            <div>
+                                <textarea class='form-control' formControlName="remarks"></textarea>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="actions">
+                                <span (click)="saveNewFollowUp(i)"
+                                    class="del-ico ml-2 cursor-click"><i class="icofont-save"
+                                        style="font-size:20px"></i>
+                                </span>
+                            </div>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+
+                <tbody formArrayName="followUpList" *ngFor="let lists of followUpForms.controls; let i = index;">
+                    <tr [formGroupName]="i" class="w-100">
+                        <td>
+                            <input formControlName="callDateTime"
+                                class='form-control' placeholder="">
+                        </td>
+                        <td>
+                            <select formControlName="followedBy" class="form-control input-dropdown-prefer">
+                                <option value="" disabled>Select</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div>
+                                <input formControlName="uploadedFile" class='form-control'>
+                            </div>
+                        </td>
+                        <td>
+                            <textarea formControlName="remarks"></textarea>
+                        </td>
+                        <td>
+                            <div class="actions d-flex">
+                                <span class="mt-2 ml-2 cursor-click"><i class="icofont-edit"
+                                        (click)="editFollowUp(i)"
+                                        style="font-size:25px"></i></span>
+                                <span *ngIf="enableEditFollowUpIndex"
+                                    (click)="saveEditFollowUp(i)"
+                                    class="del-ico ml-2 cursor-click"><i class="icofont-save">save</i></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" id="btn1bg6" class="btn btn-warning btn-lg" (click)="newFollowUpItem()">Add New</button>
+</div>

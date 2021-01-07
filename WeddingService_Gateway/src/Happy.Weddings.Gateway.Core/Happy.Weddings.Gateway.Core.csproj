@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DTO\VendorRegistration\**" />
+    <Compile Remove="Services\v1\VendorRegistration\**" />
+    <EmbeddedResource Remove="DTO\VendorRegistration\**" />
+    <EmbeddedResource Remove="Services\v1\VendorRegistration\**" />
+    <None Remove="DTO\VendorRegistration\**" />
+    <None Remove="Services\v1\VendorRegistration\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="container cntin2 mt-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <h4 class="mt-2 ">Manual Wallet Adjustment</h4>
+                </div>
+                <div class="col-lg-8">
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 ">
+                    <span>Enter Vendor Name/ID</span>
+                </div>
+                <div class="col-lg-7" >
+                    <input class="mt-2" [(ngModel)]="search" id="inpt" type="text" placeholder="" />
+                </div>
+                <div class="col-lg-2">
+                    <button type="button" id="btn1bg6" (click)="searchList(search)"
+                        class="btn btn-warning btn-md mt-2 ">Search</button>
+                </div>
+            </div>
+
+        </div><br>
+        <form [formGroup]="basicForm">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Vendor ID</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input formControlName="vendorId" class="mt-2" id="inp" type="text" placeholder="" />
+                        <!-- <div *ngIf="formSubmitted && form.vendorId.errors?.required" class="valid-error">Vendor ID is
+                            required.</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Vendor Name</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input class="mt-2" formControlName="vendorName" id="inp" type="text" placeholder="" />
+                        <!-- <div *ngIf="formSubmitted && form.vendorName.errors?.required" class="valid-error">Vendor Name
+                            is required.</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-4">
+                        <span class="mt-2 respfnt">Category</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input class="mt-2" formControlName="category" id="inp" type="text" placeholder="" />
+                        <!-- <div *ngIf="formSubmitted && form.category.errors?.required" class="valid-error">
+                            Category is required.</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Vendor Status</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <!-- <ng-multiselect-dropdown id="in" [settings]="dropdownSettings" [data]="status"
+                            formControlName="vendorStatus">
+                        </ng-multiselect-dropdown> -->
+                        <input class="mt-2" formControlName="vendorStatus" id="inp" type="text" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Wallet Balance</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input class="mt-2" id="inp" formControlName="walletBalance" type="text" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Adjustment type</span>
+                    </div>
+                    <div class="col-lg-9 col-8">
+                        <ng-multiselect-dropdown id="in" [settings]="dropdownSettings" [data]="adjustmentTypeList"
+                            formControlName="adjustmentType">
+                        </ng-multiselect-dropdown>
+                        <div *ngIf="formSubmitted && form.adjustmentType.errors?.required" class="valid-error">
+                            Adjustment type is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Adjustment Amount </span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input class="mt-2" formControlName="adjustmentAmount" id="inp" type="text" placeholder="" />
+                        <div *ngIf="formSubmitted && form.adjustmentAmount.errors?.required" class="valid-error">Adjustment
+                            Amount is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-4">
+                        <span class="mt-2 respfnt">Remarks </span>
+                    </div>
+                    <div id="inpt2" class="col-lg-9 col-8">
+                        <input class="mt-2" formControlName="remarks" id="inp" type="text" placeholder="" />
+                     
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  mx-auto d-block mt-3"
+                (click)="submit(basicForm)">Submit</button>
+        </form>
+    </div>
+
+</div>

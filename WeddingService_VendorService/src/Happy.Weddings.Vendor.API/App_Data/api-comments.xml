@@ -1,0 +1,1336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Happy.Weddings.Vendor.API</name>
+    </assembly>
+    <members>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController">
+            <summary>
+            Vendor Assets operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.AddAssets(Happy.Weddings.Vendor.Core.DTO.Requests.Asset.AddAssetRequest)">
+            <summary>
+            Add the Vendor Assets.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.UpdateAsset(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Asset.UpdateAssetRequest)">
+            <summary>
+            Updates the Asset.
+            </summary>
+            <param name="assetId"></param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.DeleteAsset(System.Int32)">
+            <summary>
+            Deletes the Asset.
+            </summary>
+            <param name="assetId">The asset identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.GetAssetById(System.Int32)">
+            <summary>
+            Get the  Assets by Id.
+            </summary>
+            <param name="assetId">The Offer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.AssetsController.GetAllAssets(Happy.Weddings.Vendor.Core.DTO.Requests.Asset.AssetParameters)">
+            <summary>
+            Gets all Assets
+            </summary>
+            <param name="assetParameters">The  Asset Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController">
+            <summary>
+            Vendor branch and services offered  operations handled by this controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController"/> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController.GetAllBranches(Happy.Weddings.Vendor.Core.DTO.Requests.Branches.BranchParameters)">
+            <summary>
+            Gets the type of the branches.
+            </summary>
+            <param name="branchParameters">The branch type identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController.CreateBranch(Happy.Weddings.Vendor.Core.DTO.Requests.Branch.CreateBranchRequest)">
+            <summary>
+            Creates the Branch.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController.UpdateBranch(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Branch.UpdateBranchRequest)">
+            <summary>
+            Updates the branch.
+            </summary>
+            <param name="branchId">The branch identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.BranchServicesController.DeleteBranch(System.Int32)">
+            <summary>
+            Deletes the branch.
+            </summary>
+            <param name="branchId">The district  identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.EventsController">
+            <summary>
+            Vendors Event operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.EventsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.GetEventsByCondition(Happy.Weddings.Vendor.Core.DTO.Requests.Event.EventParameters)">
+            <summary>
+            Gets the Events by condition.
+            </summary>
+            <param name="eventParameters">The event parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.GetEventDetailsById(Happy.Weddings.Vendor.Core.DTO.Requests.Event.EventVendorParameters)">
+            <summary>
+            Gets the event details by vendor.
+            </summary>
+            <param name="eventVendorParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.GetEventById(System.Int32)">
+            <summary>
+            Gets the event.
+            </summary>
+            <param name="eventId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.CreateEvent(Happy.Weddings.Vendor.Core.DTO.Requests.Event.CreateEventRequest)">
+            <summary>
+            Creates the Event.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.UpdateEvent(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Event.UpdateEventRequest)">
+            <summary>
+            Updates Event.
+            </summary>
+            <param name="eventId">The event identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsController.DeleteEvent(System.Int32)">
+            <summary>
+            Deletes the Event.
+            </summary>
+            <param name="eventId">The Event identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.EventsGalleryController">
+            <summary>
+            Vendors Event Gallery operations handled by this controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.EventsGalleryController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsGalleryController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.EventsGalleryController"/> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.EventsGalleryController.GetEventGalleryByVendorId(Happy.Weddings.Vendor.Core.DTO.Requests.EventGallery.EventGalleryParameters)">
+            <summary>
+            Gets the events gallery by vendor identifier.
+            </summary>
+            <param name="eventGalleryParameters">The event gallery parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController">
+            <summary>
+            Vendors multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.GetMultiCodes(Happy.Weddings.Vendor.Core.DTO.Requests.MultiCode.MultiCodeParameters)">
+            <summary>
+            Gets all the MultiCodes.
+            </summary>
+            <param name="multiCodeParameters">The multicode parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.GetMultiCodeById(System.String)">
+            <summary>
+            Gets the multicode.
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.CreateMultiCode(Happy.Weddings.Vendor.Core.DTO.Requests.MultiCode.CreateMultiCodeRequest)">
+            <summary>
+            Creates the Multicode.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.UpdateMultiCode(System.String,Happy.Weddings.Vendor.Core.DTO.Requests.MultiCode.UpdateMultiCodeRequest)">
+            <summary>
+            Updates MultiCode.
+            </summary>
+            <param name="code">System Code</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiCodesController.DeleteMultiCode(System.String)">
+            <summary>
+            Deletes the MultiCode.
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController">
+            <summary>
+            Vendors multicode operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.GetMultiDetails(Happy.Weddings.Vendor.Core.DTO.Requests.MultiDetail.MultiDetailParameters)">
+            <summary>
+            Gets all multidetails.
+            </summary>
+            <param name="multiDetailParameters">The multidetail parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.GetMultiDetailsById(System.String)">
+            <summary>
+            Gets the multidetails
+            </summary>
+            <param name="code">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.CreateMultiDetails(Happy.Weddings.Vendor.Core.DTO.Requests.MultiDetail.CreateMultiDetailsRequest)">
+            <summary>
+            Creates the multidetail.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.UpdateMultiDetails(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.MultiDetail.UpdateMultiDetailsRequest)">
+            <summary>
+            Updates MultiDetail.
+            </summary>
+            <param name="multidetailId">System Code</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.MultiDetailsController.DeleteMultiDetails(System.Int32)">
+            <summary>
+            Deletes the MultiDetail.
+            </summary>
+            <param name="multidetailId">System Code</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.OffersController">
+            <summary>
+            Offers operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.OffersController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.GetOffers(Happy.Weddings.Vendor.Core.DTO.Requests.Offers.OffersParameter)">
+            <summary>
+            Gets the  Offers
+            </summary>
+            <param name="offersParameters">The  Offers Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.GetOffer(System.Int32)">
+            <summary>
+            Get the  Offers.
+            </summary>
+            <param name="offerId">The Offer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.CreateOffer(Happy.Weddings.Vendor.Core.DTO.Requests.Offers.CreateOfferRequest)">
+            <summary>
+            Create the Offers.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.UpdateOffer(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Offers.UpdateOfferRequest)">
+            <summary>
+            Update the Offers.
+            </summary>
+            <param name="offerId">The offer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.DeleteOffer(System.Int32)">
+            <summary>
+            Delete the Offer.
+            </summary>
+            <param name="offerId">The offer identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.GetSubcriptionOffers(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionOffers.SubscriptionOffersParameter)">
+            <summary>
+            Gets the subcription offers.
+            </summary>
+            <param name="subscriptionOffersParameters">The subscription offers parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.GetSubcriptionOffer(System.Int32)">
+            <summary>
+            Get the Subcription Offers.
+            </summary>
+            <param name="subscriptionOffersId">The SubcriptionOffers identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.CreateSubcriptionOffers(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionOffers.CreateSubscriptionOfferRequest)">
+            <summary>
+            Create the Subcription Offers.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.UpdateSubcriptionOffers(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionOffers.UpdateSubscriptionOfferRequest)">
+            <summary>
+            Update the Subcription Offers.
+            </summary>
+            <param name="subscriptionOffersId">The subcriptionOffers identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.OffersController.DeleteSubcriptionOffers(System.Int32)">
+            <summary>
+            Delete the Subcription Offers.
+            </summary>
+            <param name="subscriptionOffersId">The subcriptionbenefit identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController">
+            <summary>
+            Vendors Profile operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController.GetCategoryDetailsByVendorId(System.String)">
+            <summary>
+            Gets the Category details by Vendor Id.
+            </summary>
+            <param name="vendorId">The vendor id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController.CreateCategoryDetails(Happy.Weddings.Vendor.Core.DTO.Requests.ProfilePicture.CreateCategoryDetailsRequest)">
+            <summary>
+            Creates the Category Details.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ProfileController.UpdateCategoryDetails(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.ProfilePicture.UpdateCategoryDetailsRequest)">
+            <summary>
+            Updates the Category Details.
+            </summary>
+            <param name="categoryId">The category identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController">
+            <summary>
+            Reviews operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.GetReviews(Happy.Weddings.Vendor.Core.DTO.Requests.Review.ReviewsParameter)">
+            <summary>
+            Gets the  Reviews
+            </summary>
+            <param name="reviewsParameter">The  Reviews Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.GetReview(System.Int32)">
+            <summary>
+            Get the  Reviews.
+            </summary>
+            <param name="reviewId">The Review identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.CreateReview(Happy.Weddings.Vendor.Core.DTO.Requests.Review.CreateReviewRequest)">
+            <summary>
+            Create the Review.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.UpdateReview(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Review.UpdateReviewRequest)">
+            <summary>
+            Update the Reviews.
+            </summary>
+            <param name="reviewId">The offer identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.DeleteReview(System.Int32)">
+            <summary>
+            Delete the Reviews.
+            </summary>
+            <param name="reviewId">The review identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.GetCommentReplies(Happy.Weddings.Vendor.Core.DTO.Requests.CommentReply.CommentReplyParameter)">
+            <summary>
+            Gets the  Comment Replies
+            </summary>
+            <param name="commentReplyParameter">The  Comment Replies Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.CreateCommentReply(Happy.Weddings.Vendor.Core.DTO.Requests.CommentReply.CreateCommentReplyRequest)">
+            <summary>
+            Create the CommentReply.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.GetCommentReply(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.CommentReply.ReplyCountParameter)">
+            <summary>
+            Get the  CommentReply.
+            </summary>
+            <param name="replyCountParameter">The CommentReply identifier.</param>
+            <param name="commentreplyId">The CommentReply identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.UpdateCommentReply(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.CommentReply.UpdateCommentReplyRequest)">
+            <summary>
+            Update the CommentReply.
+            </summary>
+            <param name="commentreplyId">The CommentReply identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ReviewCommentsController.DeleteCommentReply(System.Int32)">
+            <summary>
+            Delete the CommentReply.
+            </summary>
+            <param name="commentReplyId">The CommentReply identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController">
+            <summary>
+            Vendor Questions ans Answer operations handled by this controller
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController"/> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.GetAllServiceQuestionsByServiceType(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceQuestion.ServiceQuestionParameters)">
+            <summary>
+            Gets all the type of the service question by service.
+            </summary>
+            <param name="serviceQuestionParameters">The service type identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.GetServiceQuestionsById(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceQuestion.ServiceQuestionServiceTypeParameters)">
+            <summary>
+            Gets the type of the service question by service type and id.
+            </summary>
+            <param name="serviceQuestionServiceTypeParameters">The service type identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.GetAllServiceAnswerByServiceQuestion(System.Int32)">
+            <summary>
+            Gets all service answer by service question.
+            </summary>
+            <param name="serviceQuestionId">The service question identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.CreateServiceQuestion(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceQuestion.CreateServiceQuestionRequest)">
+            <summary>
+            Create the service question 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.UpdateServiceQuestion(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.ServiceQuestion.UpdateServiceQuestionRequest)">
+            <summary>
+            Update the service question
+            </summary>
+            <param name="questionId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.DeleteServiceQuestion(System.Int32)">
+            <summary>
+            Deletes the service question.
+            </summary>
+            <param name="questionId">The question identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.CreateServiceAnswer(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceAnswer.ServiceAnswerRequest)">
+            <summary>
+            Creates the service answer.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.UpdateServiceAnswer(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.ServiceAnswer.ServiceAnswerDetails)">
+            <summary>
+            Updates the service answer.
+            </summary>
+            <param name="answerId">The answerId identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.DeleteServiceAnswer(System.Int32)">
+            <summary>
+            Deletes the service answer.
+            </summary>
+            <param name="questionId">The question identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.GetAllVendorQuestionAnswersById(System.String,System.Boolean)">
+            <summary>
+            Gets all service answer by Vendor.
+            </summary>
+            <param name="Id">The Vendor identifier.</param>
+            <param name="IsForVendor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.CreateVendorQuestionAnswer(Happy.Weddings.Vendor.Core.DTO.Requests.VendorQuestionAnswer.VendorQuestionAnswerRequest)">
+            <summary>
+            Creates the vendor answer.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceQuestionController.UpdateVendorQuestionAnswer(System.String,Happy.Weddings.Vendor.Core.DTO.Requests.VendorQuestionAnswer.UpdateVendorQusetionAnswerDetailsRequest)">
+            <summary>
+            Update the vendor answer.
+            </summary>
+            <param name="vendorleadId">The vendor identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController">
+            <summary>
+            Vendor Services operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.AddService(System.Collections.Generic.List{Happy.Weddings.Vendor.Core.DTO.Requests.Service.AddServicesRequest})">
+            <summary>
+            Add the Vendor Services.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.UpdateService(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Service.UpdateServiceRequest)">
+            <summary>
+            Updates the service.
+            </summary>
+            <param name="serviceId"></param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.DeleteService(System.Int32)">
+            <summary>
+            Deletes the service.
+            </summary>
+            <param name="serviceId">The service identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.GetAllServices(Happy.Weddings.Vendor.Core.DTO.Requests.Service.ServicesParameters)">
+            <summary>
+            Gets the services.
+            </summary>
+            <param name="serviceParameters">The service parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.SearchServices(Happy.Weddings.Vendor.Core.DTO.Requests.Service.SearchParameters)">
+             <summary>
+            Search the Services.
+             </summary>
+             <param name="searchParameters">The search services parameters.</param>
+             <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.GetServicesofVendor(System.String)">
+            <summary>
+            Gets the services of vendor.
+            </summary>
+            <param name="vendorId">The vendor identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServicesController.GetServiceOfferedByServiceId(System.Int32)">
+            <summary>
+            Gets the service offered by service identifier.
+            </summary>
+            <param name="serviceId">The service identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController">
+            <summary>
+            Vendors Subcriptions operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.GetServiceSubscriptions(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceSubscription.ServiceSubscriptionsParameter)">
+            <summary>
+            Gets the Service Subcription 
+            </summary>
+            <param name="serviceSubscriptionsParameter">The Service subcription  Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.GetServiceSubscriptionById(System.Int32)">
+            <summary>
+            Get the Service Subscription.
+            </summary>
+            <param name="serviceSubscriptionId">The Service Subscription identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.CreateServiceSubscription(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceSubscription.CreateServiceSubscriptionRequest)">
+            <summary>
+            Create the Service Subscription
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.UpdateVendorSubscription(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.ServiceSubscription.UpdateServiceSubscriptionRequest)">
+            <summary>
+            Update the servicesubscription 
+            </summary>
+            <param name="servicesubscriptionId">The vendor subscription identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController.DeleteServiceSubscription(System.Int32)">
+            <summary>
+            Delete the service subscription.
+            </summary>
+            <param name="servicesubscriptionId">The subcriptionbenefit identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController">
+            <summary>
+            ServiceTopup operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.GetServiceTopups(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceTopup.ServiceTopupParameter)">
+            <summary>
+            Gets the ServiceTopup
+            </summary>
+            <param name="serviceTopupParameter">The ServiceTopup  Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.GetServiceTopupById(System.Int32)">
+            <summary>
+            Get the ServiceTopup
+            </summary>
+            <param name="servicetopupId">The ServiceTopupidentifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.CreateServiceTopup(Happy.Weddings.Vendor.Core.DTO.Requests.ServiceTopup.CreateServiceTopupRequest)">
+            <summary>
+            Create the ServiceTopup
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.UpdateServiceTopup(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.ServiceTopup.UpdateServiceTopupRequest)">
+            <summary>
+            Update the ServiceTopup
+            </summary>
+            <param name="servicesubscriptionId">The ServiceTopup identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.ServiceTopupsController.DeleteServiceTopup(System.Int32)">
+            <summary>
+            Delete the ServiceTopup
+            </summary>
+            <param name="servicetopupId">The ServiceTopup identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController">
+            <summary>
+            Vendors Subcriptions Benefits operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.GetSubcriptionPlans(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionBenefits.SubscriptionBenefitsParameter)">
+            <summary>
+            Gets the Subcription Benefits
+            </summary>
+            <param name="subscriptionBenefitsParameters">The subcription Plans Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.GetSubcriptionPlan(System.Int32)">
+            <summary>
+            Get the Subcription Benefits.
+            </summary>
+            <param name="subcriptionBenefitId">The SubcriptionBenefits identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.CreateSubcriptionBenefit(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionBenefits.CreateSubscriptionBenefitRequest)">
+            <summary>
+            Create the Subcription Benefits.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.UpdateSubcriptionBenefit(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionBenefits.UpdateSubscriptionBenefitRequest)">
+            <summary>
+            Update the Subcription Benefit.
+            </summary>
+            <param name="subcriptionbenefitId">The subcriptionbenefit identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionBenefitsController.DeleteSubcriptionBenefit(System.Int32)">
+            <summary>
+            Delete the Subcription Benefit.
+            </summary>
+            <param name="subcriptionbenefitId">The subcriptionbenefit identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController">
+            <summary>
+            Subcriptions Locations operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.GetSubcriptionLocations(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionLocation.SubscriptionLocationsParameter)">
+            <summary>
+            Gets the subscriptionLocations
+            </summary>
+            <param name="subscriptionLocationsParameter">The subcription Plans Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.GetSubcriptionPlan(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionLocation.LocationParameters)">
+            <summary>
+            Get the subscription Location
+            </summary>
+            <param name="locationParameters">The subscriptionLocation identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.CreateSubcriptionLocation(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionLocation.CreateSubscriptionLocationRequest)">
+            <summary>
+            Create the subscriptionLocation
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.UpdateSubcriptionPlan(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionLocation.UpdateSubscriptionLocationRequest)">
+            <summary>
+            Update the subscriptionLocation
+            </summary>
+            <param name="subscriptionLocationId">The subscriptionLocation identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionlocationsController.DeleteSubcriptionPlan(System.Int32)">
+            <summary>
+            Delete the subscriptionLocation.
+            </summary>
+            <param name="subscriptionLocationId">The subscriptionLocation identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController">
+            <summary>
+            Subscriptions operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.GetSubcriptionPlans(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionPlans.SubscriptionPlansParameter)">
+            <summary>
+            Gets the Subcription Plans
+            </summary>
+            <param name="subscriptionPlansParameters">The subcription Plans Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.GetSubcriptionPlan(System.Int32)">
+            <summary>
+            Get the Subcription Plan.
+            </summary>
+            <param name="subscriptionPlanId">The SubcriptionPlan identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.CreateSubcriptionPlan(Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionPlans.CreateSubscriptionPlanRequest)">
+            <summary>
+            Create the Subcription Plan.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.UpdateSubcriptionPlan(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.SubscriptionPlans.UpdateSubscriptionPlanRequest)">
+            <summary>
+            Update the Subcription Plan.
+            </summary>
+            <param name="subscriptionplanId">The subcriptionplan identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController.DeleteSubcriptionPlan(System.Int32)">
+            <summary>
+            Delete the Subcription Plan.
+            </summary>
+            <param name="subscriptionplanId">The subcriptionplan identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController">
+            <summary>
+            Suggestionlists operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.GetSuggestionLists(Happy.Weddings.Vendor.Core.DTO.Requests.SuggestionList.SuggestionListParameter)">
+            <summary>
+            Gets the Suggestionlists
+            </summary>
+            <param name="suggestionListsParameters">The Suggestionlists Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.GetSuggestionList(System.Int32)">
+            <summary>
+            Get the Suggestion list
+            </summary>
+            <param name="suggestionlistId">The Suggestionlists identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.CreateSuggestionList(Happy.Weddings.Vendor.Core.DTO.Requests.SuggesstionList.CreateSuggestionListRequest)">
+            <summary>
+            Create the Suggestionlist
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.UpdateSuggestionList(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.SuggesstionList.UpdateSuggestionListRequest)">
+            <summary>
+            Update the Suggestion list
+            </summary>
+            <param name="suggestionlistId">The Suggestionlist identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.SuggestionlistsController.DeleteSuggestionList(System.Int32)">
+            <summary>
+            Delete the Suggestion list
+            </summary>
+            <param name="suggestionlistId">The Suggestionlist identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController">
+            <summary>
+            TopUp operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.GetTopUps(Happy.Weddings.Vendor.Core.DTO.Requests.TopUp.TopUpParameter)">
+            <summary>
+            Gets the Top Up 
+            </summary>
+            <param name="topupsParameters">The Vendor subcription  Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.GetTopUpById(System.Int32)">
+            <summary>
+            Gets the top up by identifier.
+            </summary>
+            <param name="topupId">The topup identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.CreateTopUp(Happy.Weddings.Vendor.Core.DTO.Requests.TopUp.CreateTopUpRequest)">
+            <summary>
+            Create the Top Up
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.UpdateTopUp(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.TopUp.UpdateTopUpRequest)">
+            <summary>
+            Update the Top Up
+            </summary>
+            <param name="topupId">The topup identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.DeleteTopUp(System.Int32)">
+            <summary>
+            Delete the Top up
+            </summary>
+            <param name="topupId">The topup identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.GetTopUpBenefits(Happy.Weddings.Vendor.Core.DTO.Requests.TopUpBenefit.TopUpBenefitParameter)">
+            <summary>
+            Gets the Top Up Benefit
+            </summary>
+            <param name="topupBenefitsParameters">The Vendor subcription  Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.GetTopupBenefitById(System.Int32)">
+            <summary>
+            Gets the top up Benefit by identifier.
+            </summary>
+            <param name="topupbenefitId">The topup identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.CreateTopUpBenefit(Happy.Weddings.Vendor.Core.DTO.Requests.TopUpBenefit.CreateTopUpBenefitRequest)">
+            <summary>
+            Create the Top Up Benefit
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.TopUpController.UpdateTopUpBenefit(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.TopUpBenefit.UpdateTopUpBenefitRequest)">
+            <summary>
+            Update the Top Up Benefit
+            </summary>
+            <param name="topupId">The topup Benefit identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController">
+            <summary>
+            Vendors Subcriptions operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.ServiceSubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.GetSubscriptionUtility(Happy.Weddings.Vendor.Core.DTO.Requests.Utility.SubscriptionUtilityParameters)">
+            <summary>
+            Gets the subscription utility.
+            </summary>
+            <param name="subscriptionUtilityParameters">The subscription utility parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.GetSubscriptionUtilityById(System.Int32)">
+            <summary>
+            Gets the subscription utility by identifier.
+            </summary>
+            <param name="UtilityId">The utility identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.CreateSubscriptionUtility(Happy.Weddings.Vendor.Core.DTO.Requests.Utility.CreateUtilityRequest)">
+            <summary>
+            Creates the subscription utility.
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.UpdateSubscriptionUtility(System.Int32,Happy.Weddings.Vendor.Core.DTO.Requests.Utility.UpdateUtilityRequest)">
+            <summary>
+            Updates the subscription utility.
+            </summary>
+            <param name="SubscriptionUtilityId">The subscription utility identifier.</param>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.UtilityController.DeleteSubscriptionUtility(System.Int32)">
+            <summary>
+            Deletes the subscription utility.
+            </summary>
+            <param name="SubscriptionUtilityId">The subscription utility identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController">
+            <summary>
+            Subscriptions operations handled by this controller
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController.mediator">
+            <summary>
+            The mediator
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Controllers.v1.SubscriptionsController" /> class.
+            </summary>
+            <param name="mediator">The mediator.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController.GetWaallets(Happy.Weddings.Vendor.Core.DTO.Requests.Wallet.WalletsParameter)">
+            <summary>
+            Gets the Wallets
+            </summary>
+            <param name="walletsParameter">The subcription Plans Parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController.GetWallet(System.Int32)">
+            <summary>
+            Get the Wallets
+            </summary>
+            <param name="walletId">The Wallet identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Controllers.v1.WalletsController.CreateWallet(Happy.Weddings.Vendor.Core.DTO.Requests.Wallet.CreateWalletRequest)">
+            <summary>
+            Create the Wallet
+            </summary>
+            <param name="request">The request.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.HealthCheck">
+            <summary>
+            Extension for adding health checks
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.HealthCheck.AddHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the health checks.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.MVCConfiguration">
+            <summary>
+            Extension for adding MVC related operations
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.MVCConfiguration.AddMVCConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the MVC confihuration.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.ResponseCompression">
+            <summary>
+            Extension for adding response compression
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.ResponseCompression.CreateResponseCompression(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.ResponseCompression.GetMimeTypesForCompression">
+            <summary>
+            Gets the MIME types for compression.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.RouteExtensions">
+            <summary>
+            Adds the route url prefixes
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="routeAttribute">The route attribute.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.RouteExtensions.UseGeneralRoutePrefix(Microsoft.AspNetCore.Mvc.MvcOptions,System.String)">
+            <summary>
+            Uses the general route prefix.
+            </summary>
+            <param name="opts">The opts.</param>
+            <param name="prefix">The prefix.</param>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.RoutePrefixConvention">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.IApplicationModelConvention" />
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.RoutePrefixConvention.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Extensions.RoutePrefixConvention"/> class.
+            </summary>
+            <param name="route">The route.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.RoutePrefixConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            Called to apply the convention to the <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.
+            </summary>
+            <param name="application">The <see cref="T:Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel" />.</param>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.ServicesInjection">
+            <summary>
+            Extension for adding object injection lifetime
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.ServicesInjection.AddServicesInjection(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the services injection.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="HostingEnvironment">The hosting environment.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Extensions.SwaggerConfiguration">
+            <summary>
+            Extension for adding swagger documentation
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Extensions.SwaggerConfiguration.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates the response compression.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Filters.SerilogPropertyFilter">
+            <summary>
+            Serilog filter for adding dynamic properties
+            </summary>
+        </member>
+        <member name="F:Happy.Weddings.Vendor.API.Filters.SerilogPropertyFilter._next">
+            <summary>
+            The next
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Filters.SerilogPropertyFilter.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Filters.SerilogPropertyFilter" /> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Filters.SerilogPropertyFilter.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Program">
+            <summary>
+            Program starts here
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Happy.Weddings.Vendor.API.Startup">
+            <summary>
+            Base method for intilaizing the services
+            </summary>
+        </member>
+        <member name="P:Happy.Weddings.Vendor.API.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:Happy.Weddings.Vendor.API.Startup.HostingEnvironment">
+            <summary>
+            Gets the hosting environment.
+            </summary>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Happy.Weddings.Vendor.API.Startup"/> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Happy.Weddings.Vendor.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,249 @@
+<div class="container cntin2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ">
+                <h5>Category Details</h5>
+            </div>
+            <div class="col-lg-8">
+            </div>
+
+        </div>
+
+    </div>
+    <tabset>
+        <tab heading="{{categoryList[currentCategoryCount].value}}" id="tab1">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Commission mode</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input [disabled]="true" [(ngModel)]="categoryList[currentCategoryCount].commissionMode"
+                            class="mt-2" id="inp" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Sub Category </span>
+                    </div>
+                    <div  class="col-lg-8">
+                        <ng-multiselect-dropdown id="multi-select" [settings]="dropdownSettingsCat" [data]="subCat"
+                        [(ngModel)]="categoryList[currentCategoryCount].subCategory" >
+                    </ng-multiselect-dropdown>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Category Website</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class=" " [(ngModel)]="categoryList[currentCategoryCount].checkWebsiteLink"
+                            (click)="sameAsWebsite();" type="checkbox" value="false"> Same as
+                        <input class="mt-1" id="inp" [disabled]="categoryList[currentCategoryCount].checkWebsiteLink"
+                            [(ngModel)]="categoryList[currentCategoryCount].websiteLink" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Category Facebook Link</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class=" " [(ngModel)]="categoryList[currentCategoryCount].checkFacebookLink"
+                            (click)="sameAsFacebook();" type="checkbox" value="false"> Same as
+                        <input class="mt-2" id="inp" [disabled]="categoryList[currentCategoryCount].checkFacebookLink"
+                            [(ngModel)]="categoryList[currentCategoryCount].facebookLink" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Category Instagram Link</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class=" " [(ngModel)]="categoryList[currentCategoryCount].checkInstagramLink"
+                            (click)="sameAsInstagram();" type="checkbox" value="false"> Same as
+                        <input class="mt-2" id="inp" [disabled]="categoryList[currentCategoryCount].checkInstagramLink"
+                            [(ngModel)]="categoryList[currentCategoryCount].instagramLink" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Category Pinterest Link</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class=" " [(ngModel)]="categoryList[currentCategoryCount].checkPinterestLink"
+                            (click)="sameAsPinterest();" type="checkbox" value="false"> Same as
+                        <input class="mt-2" id="inp" [disabled]="categoryList[currentCategoryCount].checkPinterestLink"
+                            [(ngModel)]="categoryList[currentCategoryCount].pinterestLink" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Category Twitter Handle</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class=" " [(ngModel)]="categoryList[currentCategoryCount].checkTwitterHandle"
+                            (click)="sameAsTwitter();" type="checkbox" value="false"> Same as
+                        <input class="mt-2" id="inp" [disabled]="categoryList[currentCategoryCount].checkTwitterHandle"
+                            [(ngModel)]="categoryList[currentCategoryCount].twitterHandle" type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container mt-3 bottom-marg">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2"> Upload Photos</span>
+                    </div>
+                    <div class="col-lg-8">
+                        <label for="image-upload" class="custom-file-upload ">
+                            Choose Files
+                        </label>
+                        <input id="image-upload" type="file" (change)="prepareImagePhotoFilesList($event.target.files)"
+                            multiple />
+                        <span class="p-l-20">
+                            <label class="single-file  m-t-20 m-r-10"
+                                *ngFor="let file of categoryList[this.currentCategoryCount].uploadPhotos ; let i = index">
+                                <img [src]="file.image" alt="" width="40" height="40">
+                                <span class="delete" (click)="deleteFilePhotoFilesList(i)">
+                                    <svg class="svg-style" xmlns="http://www.w3.org/2000/svg" width="14" height="18"
+                                        viewBox="0 0 14 18">
+                                        <path fill="#B1B1B1" fill-rule="nonzero"
+                                            d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <p class="font-13">{{file.fileName}}</p>
+                                </div>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container mt-3 bottom-marg">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2"> Profile Photo</span>
+                    </div>
+                    <div class="col-lg-8">
+                        <label for="profile-upload" class="custom-file-upload ">
+                            Choose Files
+                        </label>
+                        <input id="profile-upload" type="file"
+                            (change)="prepareImageProfileFilesList($event.target.files)"  />
+                        <span class="p-l-20">
+                            <label class="col-lg-4 " class="single-file  m-t-20 m-r-10"
+                                *ngFor="let file of categoryList[this.currentCategoryCount].profilePhoto ; let i = index">
+                                <img [src]="file.image" alt="" width="40" height="40">
+                                <span class="delete" (click)="deleteFileProfileFilesList(i)">
+                                    <svg class="svg-style" xmlns="http://www.w3.org/2000/svg" width="14" height="18"
+                                        viewBox="0 0 14 18">
+                                        <path fill="#B1B1B1" fill-rule="nonzero"
+                                            d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <p class="font-13">{{file.fileName}}</p>
+                                </div>
+                            </label>
+
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <span class="mt-2">Video link</span>
+                    </div>
+                    <div id="inpt2" class="col-lg-8">
+                        <input class="mt-2" id="inp" [(ngModel)]="categoryList[currentCategoryCount].videolink"
+                            type="text" placeholder="" />
+                    </div>
+
+                </div>
+
+            </div>
+        </tab>
+        <tab heading="Questions">
+            <div class="container mt-3" *ngFor="let x of categoryList[currentCategoryCount].questions;let j=index">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>{{j+1}}.{{x.question}} </p>
+                    </div>
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType===31" class="col-md-6">
+                        <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="x.serviceAnswer"
+                            [(ngModel)]="x.result" (onSelect)="onItemSelect($event,x.result)"
+                            (onDeSelect)="onItemSelect($event,x.result)">
+                        </ng-multiselect-dropdown>
+                    </div>
+
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==29" class="col-md-6">
+                        <label class="font-size ml-2" *ngFor="let l of x.serviceAnswer;let o=index"
+                            for="{{l.id}}_answer">
+                            <input type="radio" id="{{l.id}}_answer" name="{{l.id}}_answer" (click)="detectRadio(j,o)"
+                                [(ngModel)]="x.result" value="{{l.id}}_answer"> <span class="ml-2">{{l.answer}}</span>
+                        </label>
+                    </div>
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==30" class="col-md-6">
+                        <label class="font-size ml-2" *ngFor="let l of x.serviceAnswer;let o=index">
+                            <input type="checkbox" name="check{{j}}" (click)="detectCheckBox(j,o)" [value]="l.value">
+                            <span class="ml-2">{{l.answer}}</span>
+                        </label>
+                    </div>
+
+
+                    <div *ngIf="x.serviceAnswer.length>0 && x.serviceAnswer[0].controlType==28" class="col-md-6">
+                        <input class="mt-2 form-control" [(ngModel)]="x.result" type="text"
+                            [ngModel]="x.serviceAnswer[0].answer">
+                    </div>
+
+                </div>
+            </div>
+            <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  float-right mt-2"
+                (click)="saveQuestion()">Save</button>
+        </tab>
+    </tabset>
+
+
+    <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  float-right mt-2"
+        (click)="nextStep()">Next</button>
+</div>

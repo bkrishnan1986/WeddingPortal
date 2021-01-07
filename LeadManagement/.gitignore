@@ -1,0 +1,16 @@
+/src/Happy.Weddings.LeadManagement.API/bin
+/src/Happy.Weddings.LeadManagement.API/Logs
+/src/Happy.Weddings.LeadManagement.API/obj
+/src/Happy.Weddings.LeadManagement.Core/bin
+/src/Happy.Weddings.LeadManagement.Core/obj
+/src/Happy.Weddings.LeadManagement.Data/bin
+/src/Happy.Weddings.LeadManagement.Data/obj
+/src/Happy.Weddings.LeadManagement.Infrastructure/bin
+/src/Happy.Weddings.LeadManagement.Infrastructure/obj
+/src/Happy.Weddings.LeadManagement.Messaging/bin
+/src/Happy.Weddings.LeadManagement.Messaging/obj
+/src/Happy.Weddings.LeadManagement.Service/bin
+/src/Happy.Weddings.LeadManagement.Service/obj
+/.vs
+global.json
+

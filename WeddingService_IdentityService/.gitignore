@@ -1,0 +1,16 @@
+/src/Happy.Weddings.Identity.API/bin
+/src/Happy.Weddings.Identity.API/Logs
+/src/Happy.Weddings.Identity.API/obj
+/src/Happy.Weddings.Identity.Core/bin
+/src/Happy.Weddings.Identity.Core/obj
+/src/Happy.Weddings.Identity.Data/bin
+/src/Happy.Weddings.Identity.Data/obj
+/src/Happy.Weddings.Identity.Infrastructure/bin
+/src/Happy.Weddings.Identity.Infrastructure/obj
+/src/Happy.Weddings.Identity.Messaging/bin
+/src/Happy.Weddings.Identity.Messaging/obj
+/src/Happy.Weddings.Identity.Service/bin
+/src/Happy.Weddings.Identity.Service/obj
+/.vs
+global.json
+

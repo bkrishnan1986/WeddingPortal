@@ -1,0 +1,226 @@
+<div class="container cntin2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ">
+                <h5>Service provider - Basic Details</h5>
+            </div>
+            <div class="col-lg-8">
+            </div>
+
+        </div>
+
+    </div>
+    <form [formGroup]="basicForm">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Company Name*</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="companyName" />
+                    <div *ngIf="formSubmitted && form.companyName.errors?.required" class="valid-error">Company Name is
+                        required.</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Mobile Number*</span>
+                </div>
+                <div id="in" class="col-lg-8">
+                    <input class=" float-left mt-2" type="text" id="edit3" placeholder="+91">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="mobileNumber" />
+                    <div *ngIf="formSubmitted && form.mobileNumber.errors?.required" class="valid-error">Mobile Number
+                        is
+                        required.</div>
+                    <div *ngIf="formSubmitted && form.mobileNumber.errors?.pattern" class="valid-error">Number Only.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Alternate Mobile Number*</span>
+                </div>
+                <div id="in" class="col-lg-8">
+                    <input class=" float-left mt-2" type="text" id="edit3" placeholder="+91">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="alternateMobileNumber" />
+                    <div *ngIf="formSubmitted && form.alternateMobileNumber.errors?.required" class="valid-error">
+                        Alternate Mobile Number is
+                        required.</div>
+                        <div *ngIf="formSubmitted && form.alternateMobileNumber.errors?.pattern" class="valid-error">Number Only.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Primary Contact Person*</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="primaryContactPerson" />
+                    <div *ngIf="formSubmitted && form.primaryContactPerson.errors?.required" class="valid-error">Primary
+                        Contact Person is
+                        required.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Primary Contact Role*</span>
+                </div>
+                <div class="col-lg-8">
+                    <ng-multiselect-dropdown id="multi-select" [settings]="dropdownSettings" [data]="role"
+                        formControlName="primaryContactRole">
+                    </ng-multiselect-dropdown>
+                    <!-- <input class="mt-2" id="inp" type="text" placeholder="" formControlName="primaryContactRole"/> -->
+                    <div *ngIf="formSubmitted && form.primaryContactRole.errors?.required" class="valid-error">Primary
+                        Contact Role is
+                        required.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Email ID*</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="emailID" />
+                    <div *ngIf="formSubmitted && form.emailID.errors?.required" class="valid-error">Email ID is
+                        required.</div>
+                        <div *ngIf="formSubmitted && form.emailID.errors?.email" class="valid-error">Enter a valid email address.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Company Address</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="companyAddress" />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Company Location</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="companyLocation" />
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Company Pincode</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="companyPincode" />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Listing Name*</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class=" " type="checkbox" formControlName="listingNameCheck" (click)="disableListingName()"
+                        [value]="false" /> Same as above
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="listingName" />
+                    <div *ngIf="formSubmitted && form.listingName.errors?.required" class="valid-error">Listing Name is
+                        required.</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Listing Address</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="listingAddress" />
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Location</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="location" />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <span class="mt-2">Pincode*</span>
+                </div>
+                <div id="inpt2" class="col-lg-8">
+                    <input class="mt-2" id="inp" type="text" placeholder="" formControlName="pincode" />
+                    <div *ngIf="formSubmitted && form.pincode.errors?.required" class="valid-error">Pincode is
+                        required.</div>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+    <button type="button" id="btn1bg6" class="btn btn-warning btn-lg  float-right mt-2"
+        (click)="nextStep(basicForm)">Next</button>
+</div>

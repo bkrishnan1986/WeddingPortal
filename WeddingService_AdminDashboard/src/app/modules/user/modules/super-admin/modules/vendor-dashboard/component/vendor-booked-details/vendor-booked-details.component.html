@@ -1,0 +1,1052 @@
+<div class="container ">
+  <div class="row">
+  </div>
+</div>
+<div class="container ">
+  <div class="row">
+    <h5 class="mt-2 ml-4" *ngIf="vendorBasicDetails.firstName && vendorBasicDetails.lastName">
+      {{vendorBasicDetails.firstName+' '+vendorBasicDetails.lastName}}</h5>
+    <h5 class="ml-5 mt-2" *ngIf="vendorBasicDetails.id">Vendor ID- {{vendorBasicDetails.id}}</h5>
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-3 ">
+      <ul class="nav nav-tabs  d-flex">
+        <ng-container *ngFor="let category of categoryDetails">
+          <li class="nav-item m-r-10 m-b-10" *ngFor="let val of category.branchserviceoffered">
+            <button type="button" id="btn1bg21"
+              class="btn btn-warning btn-lg  ">{{category.categoryName}}-{{val.branchName}}</button>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
+<section id="tabs" class="tabs">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-4 ">
+        <ul class="nav nav-tabs  d-flex">
+          <li class="nav-item active ">
+            <button type="button" data-toggle="tab" href="#tab-1" id="btn1bg21"
+              class="btn btn-warning btn-lg mt-2">Provider Details</button>
+          </li>
+          <li class="nav-item ">
+            <button type="button" data-toggle="tab" href="#tab-branch" id="btn1bg21"
+              class="btn btn-warning btn-lg  mt-2 ml-2 ">Branch Details</button>
+          </li>
+          <li class="nav-item ">
+            <button type="button" data-toggle="tab" href="#tab-2" id="btn1bg21"
+              class="btn btn-warning btn-lg  mt-2 ml-2 ">Category Details</button>
+          </li>
+          <li class="nav-item ">
+            <button type="button" data-toggle="tab" href="#tab-questionare" id="btn1bg21"
+              class="btn btn-warning btn-lg  mt-2 ml-2 ">Questionaire</button>
+          </li>
+          <li class="nav-item ">
+            <button type="button" data-toggle="tab" href="#tab-3" id="btn1bg21"
+              class="btn btn-warning btn-lg mt-2 ml-2 ">KYC Details</button>
+          </li>
+          <li class="nav-item ">
+            <button type="button" data-toggle="tab" href="#tab-5" data-toggle="tab" id="btn1bg21" #waba 
+              class="btn btn-warning btn-lg mt-2 ml-2 ">Wallet Balance</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content cntin2">
+      <div class="tab-pane active show" id="tab-1">
+        <div class="row line-height">
+          <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="container ">
+              <h5>Provider Details</h5>
+            </div>
+            <div class="container ">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div id="det" class="mx-auoto mt-2 card-style">
+
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3">Company Name</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left pl-3">{{vendorBasicDetails.companyName}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Mobile Number</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.primaryMobileNumber}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Alternate Mobile Number</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.secondaryMobileNumber}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Primary Contact Person</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.primaryContactPerson}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5  col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Primary Contact Role</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.roleName}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5  col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Email ID</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.email}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 pt-2">Company Address</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left pt-2 pl-3">{{vendorBasicDetails.address}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 pt-2">Company Location</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7" *ngFor="let value of vendorBasicDetails.companyDistricts">
+                        <p id="answ" class="text-left pt-2 pl-3">{{value.district}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 pt-2">Company Pincode</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left pt-2 pl-3">{{vendorBasicDetails.companyPincode}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 pt-2">State</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left pt-2 pl-3">{{vendorBasicDetails.stateName}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">City</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7" *ngFor="let val of vendorBasicDetails.companyDistricts">
+                        <p id="answ" class="text-left pl-3">{{val.districtName}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div id="det" class="mx-auoto mt-2 card-style">
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Listing Name</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.listingName}}</p>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Listing Address</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">
+                          {{vendorBasicDetails.listingAddress}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Location</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">
+                          {{vendorBasicDetails.district}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Pincode</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">
+                          {{vendorBasicDetails.listingPincode}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company Website</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.website}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company Facebook Link</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.facebookLink}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company Instagram Link</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.instagramLink}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company Pinterest Link</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.pintrestLink}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company TwitterHandle</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.twitterHandle}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-5 col-md-5 col-sm-5">
+                        <p class="text-left pl-3 ">Company Profile Photo</p>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.photo}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-lg-6">
+                  <div id="det" class="mx-auoto mt-2">
+                    <div class="row">
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p class="text-left pl-3 ">Vendor Status</p>
+                      </div>
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p id="answ" class="text-left  pl-3">{{vendorBasicDetails.approvalStatusName}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p class="text-left pl-3 ">Wallet Balance</p>
+                      </div>
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p id="answ" class="text-left  pl-3" *ngIf="walletBalance.length>0">{{walletBalance[0].Balance}}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p class="text-left pl-3 ">Branding Balance</p>
+                      </div>
+                      <div class="col-lg-6  col-md-6 col-sm-6">
+                        <p id="answ" class="text-left  pl-3">Branding Balance</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="mt-4" style="overflow-x:auto;">
+                <table id="table1d" class="table table-hover table-bordered " style="width:100%">
+                  <thead id="hheadd">
+                    <tr>
+                      <th id="tb1">Category</th>
+                      <th id="tb1">City</th>
+                      <th id="tb1">Package</th>
+                      <th id="tb1">Subscription Date</th>
+                      <th id="tb1">Expiry Date</th>
+                      <th id="tb1">Registration Fees</th>
+                      <th id="tb1">Service Fees/Listing Fees</th>
+                      <th id="tb1">CPL</th>
+                      <th id="tb1">Commission</th>
+                      <th id="tb1">Payment Status</th>
+                      <th id="tb1">Total Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let category of categoryDetails">
+                      <ng-container *ngFor="let dist of category.branchserviceoffered">
+                        <td id="tb1">{{category.categoryName}}</td>
+                        <td id="tb1">{{dist.branchName}}</td>
+
+                        <td id="tb1">
+                          <p *ngFor="let cpl of cplDetails">{{cpl.packageName}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let service of serviceSubscription"> {{service.subscribedOn|date:'MM/dd/yyyy'}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let service of serviceSubscription"> {{service.subscribedOn|date:'MM/dd/yyyy'}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let cpl of cplDetails"> {{cpl.registrationFee}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let cpl of cplDetails"> {{cpl.serviceFee}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let service of serviceSubscription"> {{service.subscribedOn|date:'MM/dd/yyyy'}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let cpl of cplDetails">{{cpl.commissionAmount}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let service of serviceSubscription"> {{service.paymentStatusValue}}</p>
+                        </td>
+                        <td id="tb1">
+                          <p *ngFor="let cpl of cplDetails"> {{cpl.totalPrice}}</p>
+                        </td>
+                      </ng-container>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+            <!-- <img src="assets/img/4.jpg" alt="" class="img-fluid"> -->
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-2">
+        <div class="row line-height">
+          <div class="col-lg-12 order-2 order-lg-1  mt-lg-0">
+            <div class="container ">
+              <h5 >Category Details</h5>
+            </div>
+            <div id="det" class="container" *ngFor="let category of categoryDetails;let cat=index">
+              <ng-container *ngFor="let branch of category.branchserviceoffered">
+                <ng-container *ngFor="let rule of walletRule">
+
+                  <div class="panel-group">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" [attr.data-target]="'#category' + cat">
+                          <a id="collap">{{category.categoryName}} -
+                            {{categoryDetails[cat].branchserviceoffered.length>0?branch.branchName:null}} <i
+                              class="icofont-ui-add mt-2 float-right"></i></a>
+                        </h4>
+                      </div>
+                      <div [attr.id]="'category' + cat" class="panel-collapse  collapse">
+                        <div class="container ">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="mx-auoto">
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 pt-2">Category Name</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left pt-2 pl-3 answ">{{category.categoryName}}</p>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 "> Commission Mode</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ"> {{rule.CommissionAmount}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category Website</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.websiteLink}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category Facebook Link</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.facebookLink}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category Instagram Link</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.instagramLink}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category PinterestLink</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.pinterestLink}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category twitterHandle</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.twitterHandle}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Category Images</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8"
+                                    *ngFor="let image of category.profilePictures">
+                                    <p class="text-left  pl-3 answ">{{image.profilePicturePath}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Video Link</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <p class="text-left  pl-3 answ">{{category.videoLink}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <p class="text-left pl-3 ">Services offered</p>
+                                  </div>
+                                  <div class="col-lg-8 col-md-8 col-sm-8"
+                                    *ngFor="let service of category.branchserviceoffered">
+                                    <p class="text-left  pl-3 answ">{{service.serviceName
+                                    }}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <!-- <img src="assets/img/5.jpg" alt="" class="img-fluid"> -->
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-3">
+        <div class="row line-height">
+          <div class="container ">
+            <h5>KYC Details</h5>
+          </div>
+          <div class="col-lg-12 order-2 order-lg-1  mt-lg-0">
+            <div id="de" class="container mt-2 p-5">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">KYC Document</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-2" *ngFor="let kyc of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{kyc.kycName}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let kyc of kycDetails">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of kyc.kycdetails">{{docName.kycdocPath}}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">KYC Document Number</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let kyc of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{kyc.documentId}}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">Father's Name(As per KYC ID)</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" *ngFor="let basicDetails of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{basicDetails.fatherName}} </p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">Date Of Birth(As per KYC ID)</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" *ngFor="let basicDetails of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{basicDetails.dob|date:'MM/dd/yyyy'}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">Business Proof</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-2" *ngFor="let kyc of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{kyc.kycName}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let gst of kycDetails">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails">{{docName.gstdocument}} </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">Business Document Number</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let kyc of kycDetails">
+                  <p class="text-left pt-2 pl-3">{{kyc.documentId}} </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">GST Registered</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let gstreg of kycDetails;let g=index">
+                  <p class="text-left pt-2 pl-3">{{kycDetails[g].gstdetails.length ===0  ? 'No' : 'Yes'}} </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">GST Document</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-2" *ngFor="let kyc of kycDetails;let g=index">
+                  <p class="text-left pt-2 pl-3">{{kycDetails[g].gstdetails.length ===0  ? kyc.kycName:'NA'}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let gst of kycDetails;let g=index">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails">
+                    {{kycDetails[g].gstdetails.length ===0  ? docName.gstdocument:'NA'}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-3">
+                  <p class="text-left pl-3 pt-2">GST Number</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-7" *ngFor="let gst of kycDetails ;let g=index">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails">
+                    {{kycDetails[g].gstdetails.length ===0  ? docName.gstnumber:'NA'}}</p>
+                </div>
+              </div>
+              <div class="row" *ngFor="let gst of kycDetails">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">GST State</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails ;let g=index">
+                    {{kycDetails[g].gstdetails.length ===0  ? docName.gststateName:'NA'}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                </div>
+              </div>
+              <div class="row" *ngFor="let gst of kycDetails">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">GST City</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails ;let g=index">
+                    {{kycDetails[g].gstdetails.length ===0  ? docName.gstcityName:'NA'}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">Bussiness Name as per GST</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" *ngFor="let gst of kycDetails">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails">{{docName.businessName}}</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <p class="text-left pl-3 pt-2">Address as per GST</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" *ngFor="let gst of kycDetails">
+                  <p class="text-left pt-2 pl-3" *ngFor="let docName of gst.gstdetails">{{docName.address}} </p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <!-- <img src="assets/img/6.jpg" alt="" class="img-fluid"> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="tab-pane" id="tab-4">
+        <div class="row">
+          <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0">
+            <div class="container">
+              <div class="mt-4" style="overflow-x:auto;">
+                <table id="table1d" class="table table-hover table-bordered " style="width:100%">
+                  <thead id="hheadd" class="">
+                    <tr>
+                      <th id="sze1">Date</th>
+                      <th id="sze">Particulars</th>
+                      <th id="sze">Amount (Receipt)</th>
+                      <th id="sze">Amount (Payment)</th>
+                      <th id="sze">Wallet balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let val of serviceSubscription">
+
+                      <tr *ngFor="let details of subscriptionPlan">
+                        <td>{{val.subscribedOn|date:'MM/dd/yyyy'}}</td>
+                        <td>
+                          <p style="line-height:15px;">{{details.name}}</p>
+                          <p style="line-height:15px;">Reg .fees - {{details.registrationFee}}</p>
+                          <p style="line-height:15px;">Wallet balance-{{val.valletBalance}}</p>
+                        </td>
+                        <td>{{details.totalPrice}}</td>
+                        <td>{{val.paidAmount}}</td>
+                        <td>{{val.valletBalance}}</td>
+                      </tr>
+                    </ng-container>
+                    <tr>
+                      <th colspan="2" id="sze">CURRENT BALANCE</th>
+                      <td></td>
+                      <td></td>
+                      <td *ngIf="walletBalance.length>0">{{walletBalance[0].Balance}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="container "><br>
+              <section id="pricing" class="pricing section-bg mt-">
+                <div class="container  " data-aos="fade-up">
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5" data-aos="fade-up" data-aos-delay="100">
+                      <div class="box">
+                        <h3 href="#dem" data-toggle="collapse">Top up Now</h3>
+                        <ul *ngFor="let package of packageDetails">
+                          <div id="dem" class="collapse" *ngFor="let topup of package.topUp">
+                            <li class="text-left">Top up amount <span class="float-right"> {{topup.price}}</span></li>
+                            <li class="text-left">Applicable taxes -15%<span class="float-right">
+                                {{topup.gstRatePercentage}}</span></li>
+                            <li class="text-left">Net payable<span class="float-right">{{topup.totalPrice}}</span></li>
+                            <li class="text-left">Payment mode <span class="float-right">
+                                <div class="dropdown">
+                                  <button type="button" class="btn btn-warning btn-sm dropdown-toggle"
+                                    data-toggle="dropdown">
+                                    Payment mode
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Payment</a>
+                                    <a class="dropdown-item" href="#">Payment</a>
+                                    <a class="dropdown-item" href="#">Payment</a>
+                                  </div>
+                                </div>
+                              </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                            <li class="text-left"> <span class="float-right"> </span></li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="tab-pane" id="tab-5">
+        <div class="row">
+          <div class="col-lg-12 order-2 order-lg-1  mt-lg-0">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="container ">
+                  <h5>Wallet Balance </h5>
+                </div>
+                <div class="col-md-12">
+                  <table id="table1d" class="table table-hover table-bordered " style="width:100%">
+                    <thead id="hheadd">
+                      <tr>
+                        <th id="sze1"><label>SL no</label></th>
+                        <th id="sze2"><label>Date</label></th>
+                        <th id="sze3"><label>Amount</label></th>
+                        <th id="sze4">Particulars</th>
+                        <th id="sze5"><label>Mode</label></th>
+                        <th id="sze6"><label>Reference</label></th>
+                        <th id="sze7"><label>Wallet Balance</label></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let x of transDetails; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{x.transactionDate | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{x.amount}}</td>
+                        <td>{{x.particulars}}</td>
+                        <td>{{x.mode}}</td>
+                        <td>{{x.referenceNo}}</td>
+                        <td>{{x.walletBalance}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ul class="nav nav-tabs  d-flex">
+                  <li class="nav-item active">
+                    <button type="button" data-toggle="tab" href="#cpc" id="btn1bg21"
+                      class="btn btn-warning btn-lg mt-2 ">Leads Alloted -CPC</button>
+                  </li>
+                  <li class="nav-item ">
+                    <button type="button" id="btn1bg29" data-toggle="tab" href="#commission"
+                      class="btn btn-warning btn-lg mt-2 ml-2">Leads Alloted -Commission</button>
+                  </li>
+                  <li class="nav-item ">
+                    <button type="button" id="btn1bg21" data-toggle="tab" href="#reversed"
+                      class="btn btn-warning btn-lg mt-2 ml-2">Leads reversed</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane fade active in" id="cpc">
+                <div class="card card-body">
+                  Leads Alloted -CPC
+                  <div class="mt-4" style="overflow-x:auto;">
+                    <table class="table table-striped table-bordered " style="width:100%">
+                      <tr>
+                        <th id="sze1">Sl .No.</th>
+                        <th id="sze">Lead ID</th>
+                        <th id="sze">Lead name</th>
+                        <th id="sze">Lead Assigned date</th>
+                        <th id="sze">Event date</th>
+                        <th id="sze">CPL</th>
+                      </tr>
+                      <tr *ngFor="let leaddetail of leadDetails ;let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{leaddetail.lead.leadId}}</td>
+                        <td>{{leaddetail.lead.customerName}}</td>
+                        <td>{{leaddetail.leadSentDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{leaddetail.lead.eventDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{leaddetail.lead.cplvalue}}</td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" id="sze">Total CPC Leads asigned</th>
+                        <td></td>
+                        <td>{{cpcLeadCount}}</td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" id="sze">Total CPC amount</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>{{cpcTotalAmount}}</b></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="commission">
+                <div class="card card-body">
+                  Leads Alloted -Commission
+                  <div class="mt-4" style="overflow-x:auto;">
+                    <table class="table table-striped table-bordered " style="width:100%">
+                      <tr>
+                        <th id="sze1">Sl .No.</th>
+                        <th id="sze">Lead ID</th>
+                        <th id="sze">Lead name</th>
+                        <th id="sze">Lead Assigned date</th>
+                        <th id="sze">Event date</th>
+                        <th id="sze">Estimate amount</th>
+                        <th id="sze">Comm cost</th>
+                      </tr>
+                      <tr *ngFor="let leaddetail of leadDetails ;let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{leaddetail.lead.leadId}}</td>
+                        <td>{{leaddetail.lead.customerName}}</td>
+                        <td>{{leaddetail.leadSentDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{leaddetail.lead.eventDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{leaddetail.lead.budget}}</td>
+                        <td>{{leaddetail.lead.commisionValue}}</td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" id="sze">Total Commission leads assigned</th>
+                        <td>{{commLeadCount}}</td>
+                      </tr>
+                      <tr>
+                        <th colspan="2" id="sze">Total Commission amount deducted</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>{{commTotalAmount}}</b></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="reversed">
+                <div class="card card-body">
+                  Leads reversed
+                  <div class="mt-4" style="overflow-x:auto;">
+                    <table class="table table-striped table-bordered " style="width:100%">
+                      <tr>
+                        <th id="sze">Sl .No.</th>
+                        <th id="sze">Lead ID</th>
+                        <th id="sze">Lead name</th>
+                        <th id="sze">Lead Assigned date</th>
+                        <th id="sze">Event date</th>
+                        <th id="sze">Actual deduction</th>
+                        <th id="sze">Reversed amount</th>
+                        <th id="sze">Reason</th>
+                      </tr>
+                      <tr *ngFor="let leaddetail of leadDetails ;let i=index ">
+                        <td>{{i+1}}</td>
+                        <td>{{leaddetail.lead.leadId}}</td>
+                        <td>{{leaddetail.lead.customerName}}</td>
+                        <td>{{leaddetail.leadSentDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{leaddetail.lead.eventDate | date:'dd/MM/yyyy'}}</td>
+                        <td>300</td>
+                        <td>300</td>
+                        <td>Event cancelled</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-questionare">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="container ">
+            <h5>Questionaire</h5>
+          </div>
+          <ul class="nav nav-tabs  d-flex">
+            <li class="nav-item active m-r-10" *ngFor="let services of serviceTypes;let z=index">
+              <button type="button" data-toggle="tab" (click)="questionaireIndex == z"
+                [attr.data-target]="'#questionaire'+z" id="btn1bg21"
+                class="btn btn-warning btn-lg mt-2">{{services.value}}</button>
+            </li>
+          </ul>
+          <div class="tab-content" *ngFor="let qnAns of questionAnswers ;let z=index">
+            <div class="tab-pane active show" [attr.id]="'questionaire'+z">
+              <div class="card padding-15">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p>{{z+1+'.'}} {{qnAns.question.question}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><b>{{qnAns.answer.controlType===28?qnAns.vendoranswervalue:qnAns.answer.answer}}</b></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-branch">
+        <div class="row line-height">
+          <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0">
+            <div class="container ">
+              <h5>Branch Details</h5>
+            </div>
+            <div id="det" class="container" *ngFor="let category of categoryDetails;let k=index">
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title" data-toggle="collapse" [attr.data-target]="'#districtDashboard' + k"
+                      *ngFor="let branch of category.branchserviceoffered">
+                      <a id="collap" *ngFor="let branchDetails of branch.branches">{{branchDetails.districtName}}
+                        <i class="icofont-ui-add mt-2 float-right"></i></a>
+                    </h4>
+                  </div>
+                  <div [attr.id]="'districtDashboard' + k" class="panel-collapse  collapse">
+                    <div class="container ">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="panel-group" *ngFor="let branch of category.branchserviceoffered;let y=index">
+                            <ng-container *ngFor="let branchDetails of branch.branches">
+                              <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <h4 class="panel-title" data-toggle="collapse"
+                                    [attr.data-target]="'#branchDashboard' + y">
+                                    <a id="collap">{{branch.branchName}} <i
+                                        class="icofont-ui-add mt-2 float-right"></i></a>
+                                  </h4>
+                                </div>
+                                <div [attr.id]="'branchDashboard' + y" class="panel-collapse  collapse">
+                                  <div class="mx-auoto">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p class="text-left pl-3 pt-2">Contact Person</p>
+                                      </div>
+                                      <div class="col-lg-8 col-md-8 col-sm-8">
+                                        <p class="text-left pt-2 pl-3 answ">{{branch.contactPerson}}</p>
+                                      </div>
+                                    </div>
+
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p class="text-left pl-3 ">Primary Mobile Number</p>
+                                      </div>
+                                      <div class="col-lg-8 col-md-8 col-sm-8">
+                                        <p class="text-left  pl-3 answ"> {{branch.primaryMobileNumber}}</p>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-4 col-sm-4">
+                                        <p class="text-left pl-3 ">Email Id</p>
+                                      </div>
+                                      <div class="col-lg-8 col-md-8 col-sm-8">
+                                        <p class="text-left  pl-3 answ">{{category.emailId}}</p>
+                                      </div>
+                                    </div>
+                                    <div *ngFor="let detail of branch.branches">
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Listing Address</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.listingAddress}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Building Name</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.buildingName}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Flat/Plot/Door No</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.flatPlotDoorNo}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Street Name</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.streetName}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Pincode</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.pincode}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Landmark</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.landmark}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Latitude</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.latitude}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Longitude</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{detail.longitude}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Services Offered</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{branch.serviceName}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-4">
+                                          <p class="text-left pl-3 ">Established Year</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                          <p class="text-left  pl-3 answ">{{branchDetails.establishedYear}}</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <!-- <img src="assets/img/5.jpg" alt="" class="img-fluid"> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-3 ">
+        <button type="button" id="btn1bg21" class="btn btn-warning btn-lg  float-right">Previous</button>
+      </div>
+    </div>
+  </div>
+</section>

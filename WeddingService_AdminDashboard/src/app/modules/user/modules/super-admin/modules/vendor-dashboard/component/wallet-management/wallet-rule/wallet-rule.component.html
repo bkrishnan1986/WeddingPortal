@@ -1,0 +1,114 @@
+<div class="container mx-auto d-block  cntin2 mt-5">
+    <form [formGroup]="basicForm">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-4 ">
+                    <h4 class="mt-2">Wallet Rule</h4>
+                </div>
+                <div class="col-lg-8">
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 col-4">
+                    <span class="mt-2 respfnt">Service Code *</span>
+                </div>
+                <div id="inpt2" class="col-lg-9 col-8">
+                    <input class="mt-2" id="inp" formControlName="serviceCode" type="text" placeholder="" />
+                    <div *ngIf="formSubmitted && form.serviceCode.errors?.required" class="valid-error">Service Code is
+                        required.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 col-4">
+                    <span class="mt-2 respfnt">Service Category *</span>
+                </div>
+                <div class="col-lg-9 col-8">
+                    <ng-multiselect-dropdown id="in" [settings]="dropdownSettings" [data]="category"
+                        formControlName="serviceCategory">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="formSubmitted && form.serviceCategory.errors?.required" class="valid-error">Service
+                        Category is required.</div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 col-4">
+                    <span class="mt-2 respfnt">Mode *</span>
+                </div>
+                <div class="col-lg-9 col-8">
+                    <ng-multiselect-dropdown id="in" [settings]="dropdownSettings" [data]="mode" formControlName="mode">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="formSubmitted && form.mode.errors?.required" class="valid-error">Mode is required.</div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-4">
+                    <span class="mt-2 respfnt">CPL</span>
+                </div>
+                <div id="inpt2" class="col-lg-9 col-8">
+                    <input class="mt-2" id="inp" type="text" formControlName="cplAmount" placeholder="" />
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-lg-3 col-4">
+                    <span class="mt-2 respfnt">Comission</span>
+                </div>
+                <div id="inpt2" class="col-lg-9 col-8">
+                    <input class="mt-2" formControlName="commissionAmount" id="inp" type="text" placeholder="" />
+                </div>
+            </div>
+        </div>
+        <div class=" row">
+            <div class="  container mt-3">
+                <div class="float-right">
+                    <button type="button" (click)="saveWalletRule(basicForm); clear();" id="btn1bg6"
+                        class="btn btn-warning btn-lg mr-2 float-right "><a>{{buttonString}}</a></button>
+                    <button type="button" id="btn1bg6" (click)="clear()"
+                        class="btn btn-warning btn-lg mr-2 float-right "><a>Clear</a></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="mt-4" style="overflow-x:auto;">
+        <table id="table1d" class="table table-hover table-bordered " style="width:100%">
+            <thead id="hheadd">
+                <tr>
+
+                    <th class="dtahed respfnt">Service Code</th>
+                    <th class="dtahed respfnt" id="pckg">Service Category</th>
+                    <th class="dtahed respfnt">Mode</th>
+                    <th class="dtahed respfnt">CPL</th>
+                    <th class="dtahed respfnt">Commission</th>
+                    <th class="dtahed respfnt">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of walletList ">
+                    <td class="dta respfnt">{{x.serviceCode}}</td>
+                    <td class="dta respfnt">{{x.serviceCategoryName}}</td>
+                    <td class="dta respfnt">{{x.modeName}}</td>
+                    <td class="dta respfnt">{{x.cplAmount}}</td>
+                    <td class="dta respfnt">{{x.commissionAmount}}</td>
+                    <td class="dta respfnt">
+                        <span class="mt-2 ml-2 cursor-click"><i class="icofont-edit" (click)="editDetails(x)"
+                                style="font-size:25px"></i></span>
+                        <span class="mt-2 ml-2 cursor-click"><i class="icofont-bin" (click)="delete(x)"
+                                style="font-size:25px"></i></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

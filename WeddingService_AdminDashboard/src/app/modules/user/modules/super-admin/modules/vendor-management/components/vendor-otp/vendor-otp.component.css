@@ -1,0 +1,18 @@
+    #inpt2{
+        width:unset;
+        box-shadow: 0 0 5pt 1pt #D3D3D3;
+        outline-width: 0px;
+        border-style: none;
+        border-radius: 5px;
+        height: 35px;
+    }
+    .mt-7{
+  margin-top:7px
+    }
+    .heading-style{
+        margin-left:10px;
+        margin-top:25px;
+    }
+    .m-l-10{
+        margin-left:10px;
+    }

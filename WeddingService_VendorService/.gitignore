@@ -1,0 +1,16 @@
+/src/Happy.Weddings.Vendor.API/bin
+/src/Happy.Weddings.Vendor.API/Logs
+/src/Happy.Weddings.Vendor.API/obj
+/src/Happy.Weddings.Vendor.Core/bin
+/src/Happy.Weddings.Vendor.Core/obj
+/src/Happy.Weddings.Vendor.Data/bin
+/src/Happy.Weddings.Vendor.Data/obj
+/src/Happy.Weddings.Vendor.Infrastructure/bin
+/src/Happy.Weddings.Vendor.Infrastructure/obj
+/src/Happy.Weddings.Vendor.Messaging/bin
+/src/Happy.Weddings.Vendor.Messaging/obj
+/src/Happy.Weddings.Vendor.Service/bin
+/src/Happy.Weddings.Vendor.Service/obj
+/.vs
+global.json
+
