@@ -99,7 +99,7 @@ export class ViewLeadComponent implements OnInit, OnDestroy {
 
 
   viewLeadDetails(leadId) {
-    this.router.navigate([`/app/superadmin/lead-management/lead-details/` + leadId]);
+    this.router.navigate([`/app/superadmin/lead-management/lead-details/` + leadId+`/`+false]);
   }
 
   openFollowUpDetailsModal(Id) {

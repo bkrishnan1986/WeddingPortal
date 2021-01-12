@@ -1,0 +1,159 @@
+<div class="col-md-12 cntin2">
+
+  <div class="row p-l-20">
+      <div class="col-md-12">
+          <h4>Assign  Lead</h4>
+      </div>
+  </div>
+
+  <div class="row padding-20">
+      <div class="col-md-12">
+
+          <p-table [value]="leadsDataList" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+              [autoLayout]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+              [rowsPerPageOptions]="[10,15,20]" styleClass="p-datatable-customers p-datatable-gridlines">
+
+              <ng-template pTemplate="header">
+                  <tr >
+                      <th class="dtahed respfnt table_header_orange" >SL No</th>
+                      <th class="dtahed respfnt table_header_orange">
+                          <div class="p-d-flex p-jc-between p-ai-center">Lead ID
+                              <p-columnFilter type="text" field="leadId" matchMode="equals" display="menu"
+                                  [showOperator]="false" [showAddButton]="false"></p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange">
+                          <div class="p-d-flex p-jc-between p-ai-center">Created Date
+                              <p-columnFilter type="date" field="createdAt" display="menu" [showOperator]="false"
+                                  [showAddButton]="false"></p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange" >
+                          <div class="p-d-flex p-jc-between p-ai-center">Owner
+                              <p-columnFilter type="text" field="ownerName" display="menu" [showOperator]="false"
+                                  [showAddButton]="false"></p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange " >
+                          <div class="p-d-flex p-jc-between p-ai-center">Event Type
+                              <p-columnFilter type="text" field="eventType" display="menu" [showOperator]="false"
+                                  [showAddButton]="false"></p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange" >
+                          <div class="p-d-flex p-jc-between p-ai-center">Category
+                              <p-columnFilter type="text" field="category" display="menu" [showOperator]="false"
+                                  [showAddButton]="false"></p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange">
+                          <div class="p-d-flex p-jc-between p-ai-center">Lead Status
+                              <p-columnFilter field="serviceName" matchMode="in" display="menu"
+                                  [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                                  <ng-template pTemplate="header">
+                                      <div class="p-px-3 p-pt-3 p-pb-0">
+                                          <span class="p-text-bold">Lead Status Picker</span>
+                                      </div>
+                                  </ng-template>
+                                  <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                      <p-multiSelect [ngModel]="value" [options]="leadStatusArray"
+                                          (onChange)="filter($event.value)" placeholder="Any" optionLabel="label">
+                                          <ng-template let-option pTemplate="item">
+                                              <div class="p-multiselect-representative-option">
+                                                  <span class="p-ml-1">{{option.label}}</span>
+                                              </div>
+                                          </ng-template>
+                                      </p-multiSelect>
+                                  </ng-template>
+                              </p-columnFilter>
+                          </div>
+                      </th>
+                      <th class="dtahed respfnt table_header_orange">Action</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+                  <tr *ngIf="item.leads[0].leadStatusName =='Authorized'" >
+                      <td>{{ rowIndex + 1 }}</td>
+                      <td>{{item.leads[0].leadId}}</td>
+                      <td>{{item.leads[0].createdAt | date:'dd/MM/y'}}</td>
+                      <td>{{item.leads[0].ownerName}}</td>
+                      <td>{{item.leads[0].eventTypeName}}</td>
+                      <td>{{item.leads[0].categoryName}}</td>
+                      <td>{{item.leads[0].leadStatusName}}</td>
+                      <td class="dta respfnt">
+                          <span class="mt-2 ml-2 cursor-click"><i class="icofont-eye-alt" title="View"
+                                  (click)="viewLeadDetails(item.leads[0].leadId);" style="font-size:20px"></i></span>
+                         <!-- <span class="mt-2 ml-2 cursor-click"><i class="icofont-ui-call" title="Follow Up Details"
+                                  (click)="openFollowUpDetailsModal(item.leads[0].leadId)"
+                                  style="font-size:20px"></i></span>-->
+                          <span *ngIf="item.leads[0].leadStatusName =='Pending Approval'" class="mt-2 ml-2 cursor-click"><i class="icofont-tick-mark"
+                                  (click)="openModalForSubmit(item.leads[0].id, submitforApproval_lead);"
+                                  title="Submit for Approval" style="font-size:20px"></i></span>
+                                  <span *ngIf="item.leads[0].leadStatusName =='Approved'" class="mt-2 ml-2 cursor-click"><i class="icofont-tick-mark"
+                                    (click)="authorize(item.leads[0].id);"
+                                    title="Authorize" style="font-size:20px"></i></span>
+                                    <span *ngIf="item.leads[0].leadStatusName =='Authorized'" class="mt-2 ml-2 cursor-click"><i class="icofont-tick-mark"
+                                      (click)="redirecttoassign(item.leads[0].id)"
+                                      title="Assign" style="font-size:20px"></i></span>
+                         <!--  <span class="mt-2 ml-2 cursor-click"><i class="icofont-pause" title="Pause Lead"
+                                  (click)="pauseLead(item.leads[0].id);" style="font-size:20px"></i></span>
+                          <span class="mt-2 ml-2 cursor-click"><i class="icofont-ui-delete" title="Delete Lead"
+                                  (click)="deleteLead(item.leads[0].id);" style="font-size:20px"></i></span>-->
+                      </td>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="emptymessage">
+                  <tr>
+                      <td colspan="8">No Leads found.</td>
+                  </tr>
+              </ng-template>
+          </p-table>
+      </div>
+  </div>
+
+</div>
+
+
+<ng-template #submitforApproval_lead>
+  <div class="modal-header">
+      <h4 class="modal-title pull-left">Submit for Approval</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="submitApproval_lead">
+          <div class="col-md-12">
+              <span class="mt-2 respfnt1">Lead quality</span>
+              <select class="mt-2 form-control" id="inpt_quality"  formControlName="leadQuality">
+                <option value=""  selected>Select the quality</option>
+                  <option *ngFor="let item of leadQualityList" [value]="item.id">{{item.value}}
+                  </option>
+                
+              </select>
+              <span class="mt-2 respfnt1" style="margin-top: 4%;">Lead status</span>
+              <select class="mt-2 form-control" id="inpt_status" formControlName="leadStatus">
+                <option value=""   selected>Select the Status</option>
+                  <option   *ngFor="let item of leadStatusList" [value]="item.id">{{item.value}}
+                  </option>
+                  
+              </select>
+               <div class="row mt-4">
+                  <div class="col-md-6">
+                      <span class="mt-2 respfnt1">Approved Date</span>
+                      <input class="mt-2"  id="inpt_approved_date" readonly type="text" placeholder="" formControlName="approvedDate"/>
+
+                  </div>
+                  <div class="col-md-6">
+                      <span class="mt-2 respfnt1">Approved by</span>
+                      <input class="mt-2"  readonly id="int_approvedby" type="text" placeholder="" formControlName="approvedBy"/>
+                  </div>
+              </div> 
+          </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+      <button type="button" id="btn1bg6" class="btn btn-warning btn-lg"
+          (click)="submitRequestforApproval()">Submit</button>
+  </div>
+</ng-template>

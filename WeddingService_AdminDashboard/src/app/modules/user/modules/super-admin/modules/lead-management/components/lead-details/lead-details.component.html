@@ -7,12 +7,22 @@
         <div *ngIf="isEdit" class="col-md-8">
             <h4>Edit Lead Details</h4>
         </div>
-        <div class="col-md-2">
-            <button type="button" id="btn1bg6" class="btn btn-light" (click)="navigateToViewLeads()">BACK</button>
+        <div class="col-md-2" *ngIf="Authapprovepage;else other_content">
+            <button type="button" id="btn1bg6" class="btn btn-light" (click)="navigateToAuthApprove()">BACK</button>
         </div>
+        <ng-template #other_content>
+            <div  class="col-md-2" >
+                <button type="button" id="btn1bg6" class="btn btn-light" (click)="navigateToViewLeads()">BACK</button>
+            </div>
+
+           </ng-template>
+      
+   
+
         <div class="col-md-2">
             <button type="button" id="btn1bg6" class="btn btn-warning btn-lg" (click)="editLead()">EDIT</button>
         </div>
+       
     </div>
 
     <div class="row padding-20">
@@ -283,6 +293,35 @@
             </form>
         </div>
     </div>
+
+
+    <div *ngIf="Authapprovepage" class="padding-20">
+        <h5>Follow Up Details
+        </h5>
+        <hr>
+
+        <table class="table table-bordered">
+            <thead class="mt-3">
+                <tr>
+                    <th class="dtahed respfnt">Call Date & Time</th>
+                    <th class="dtahed respfnt">Followed By</th>
+                    <th class="dtahed respfnt">Upload File</th>
+                    <th class="dtahed respfnt">Remarks</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let item of leadFollowUpData; index as i;">
+                <td class="dtahed respfnt">{{item.calledOn| date:'medium'}}</td>
+                <td class="dtahed respfnt">No data Available</td>
+                <td class="dtahed respfnt">No data Available</td>
+                <td class="dtahed respfnt">{{item.remark}}</td>
+               </tr>
+            </tbody>
+        </table>
+    </div>
+
+
 
     <div class="row padding-20">
         <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="leadForm.controls.category.value !== ''" class="tab-pane"

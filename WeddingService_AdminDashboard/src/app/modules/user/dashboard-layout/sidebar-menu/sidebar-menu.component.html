@@ -104,7 +104,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a class="nav-link"
-                        [ngClass]="{'active': leadManagement1.isActive || leadManagement2.isActive || leadManagement3.isActive || leadManagement4.isActive || leadManagement5.isActive || leadManagement6.isActive || leadManagement7.isActive}">
+                        [ngClass]="{'active': leadManagement1.isActive || leadManagement2.isActive || leadManagement3.isActive  || leadManagement5.isActive || leadManagement6.isActive || leadManagement7.isActive}">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
                             Lead Management
@@ -127,18 +127,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" routerLink="superadmin/lead-management/approve-lead"
+                            <a class="nav-link" routerLink="superadmin/lead-management/lead-approve-auth"
                                 routerLinkActive="active" #leadManagement3="routerLinkActive">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Approve Lead</p>
+                                <p>Approve/Auth Lead</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="superadmin/lead-management/authorize-lead"
+                       <li class="nav-item">
+                           <!-- <a class="nav-link" routerLink="superadmin/lead-management/authorize-lead"
                                 routerLinkActive="active" #leadManagement4="routerLinkActive">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Authorize Lead</p>
-                            </a>
+                            </a>-->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLink="superadmin/lead-management/get-quotes"

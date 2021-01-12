@@ -154,6 +154,9 @@ export class CreateLeadComponent implements OnInit, OnDestroy {
     this.getAllLeadStatusSubscription = this.leadService.getAllLeadStatus()
       .subscribe(response => {
         if (response) {
+         
+          
+
           this.leadStatusList = response;
           this.leadForm.get('leadStatus').setValue(Constants.FollowUp);
         }

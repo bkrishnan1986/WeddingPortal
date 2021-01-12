@@ -9,6 +9,8 @@ import { CreateLeadModel, LeadDataModel, LeadStatusModel } from '../../models/cr
 import { ToastrService } from 'ngx-toastr';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { DatePipe } from '@angular/common';
+import { FormArray } from '@angular/forms';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-lead-details',
@@ -66,7 +68,9 @@ export class LeadDetailsComponent implements OnInit {
     description: ['']
   });
   id: any;
-
+  leadFollowUpData: any;
+  Authapprovepage:boolean;
+  Str_Authapprovepage :String;
   get form() {
     return this.leadForm.controls;
   }
@@ -81,7 +85,20 @@ export class LeadDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.Authapprovepage=false;
     this.leadId = this.activatedRoute.snapshot.url[1].path;
+    this.Str_Authapprovepage=this.activatedRoute.snapshot.url[2].path;
+
+    if(this.Str_Authapprovepage=='true')
+    {
+      this.Authapprovepage=true;
+    }
+    else
+    {
+      this.Authapprovepage=false;
+    }
+    this.getDetailsbyLeadId_followup();
+    
     this.getAllLeadTypes();
     this.getAllEventTypes();
     this.getAllCategories();
@@ -112,6 +129,21 @@ export class LeadDetailsComponent implements OnInit {
       });
     this.subscriptionList.push(this.getLeadDataSubscription);
   }
+
+  getDetailsbyLeadId_followup() {
+    this.getLeadDataSubscription = this.leadService.getLeadDatabyId(this.leadId)
+      .subscribe(response => {
+        if (response) {
+          this.leadData = response;
+         
+          this.leadFollowUpData = response.leadvalidation;
+         console.log(this.leadFollowUpData);
+         // this.listFollowUpItems(this.leadFollowUpData);
+        }
+      });
+    this.subscriptionList.push(this.getLeadDataSubscription);
+  }
+  
 
   getAllLeadTypes() {
     this.getAllLeadTypesSubscription = this.leadService.getAllLeadTypes()
@@ -250,6 +282,9 @@ export class LeadDetailsComponent implements OnInit {
 
   navigateToViewLeads() {
     this.router.navigate([`/app/superadmin/lead-management/view-lead`]);
+  }
+  navigateToAuthApprove() {
+    this.router.navigate([`/app/superadmin/lead-management/lead-approve-auth`]);
   }
 
   updateLead() {

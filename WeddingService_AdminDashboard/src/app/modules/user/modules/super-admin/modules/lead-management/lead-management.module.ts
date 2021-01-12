@@ -11,6 +11,8 @@ import { TableModule } from 'primeng/table';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect'
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { LeadApproveAuthViewComponent } from './components/lead-approve-auth-view/lead-approve-auth-view.component';
+import { AssignLeadComponent } from './components/assign-lead/assign-lead.component';
 
 const modules = [
   LeadManagementRoutingModule,
@@ -23,7 +25,7 @@ const modules = [
   OwlNativeDateTimeModule
 ];
 const providers = [];
-const components = [CreateLeadComponent, ViewLeadComponent, LeadDetailsComponent, FollowupDetailsModalComponent];
+const components = [CreateLeadComponent, ViewLeadComponent, LeadDetailsComponent, FollowupDetailsModalComponent,LeadApproveAuthViewComponent,AssignLeadComponent];
 
 @NgModule({
   imports: modules,
